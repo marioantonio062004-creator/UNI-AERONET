@@ -1,0 +1,1356 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- ================================================== -->
+    <!-- CONFIGURACIÓN DE LA PÁGINA                          -->
+    <!-- ================================================== -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UNI AeroNet</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ================================================== -->
+    <!-- ENCABEZADO                                         -->
+    <!-- ================================================== -->
+
+    <header>
+
+        <button id="menuButton">
+            ☰
+        </button>
+
+        <h1>
+            UNI AeroNet
+        </h1>
+
+        <div id="systemStatus">
+            ● SISTEMA
+        </div>
+
+    </header>
+
+
+    <!-- ================================================== -->
+    <!-- MENÚ LATERAL                                       -->
+    <!-- ================================================== -->
+
+    <aside id="sideMenu">
+
+        <button id="closeMenu">
+            ✕
+        </button>
+
+        <h2>
+            UNI AeroNet
+        </h2>
+
+        <nav>
+
+            <button onclick="mostrarSeccion('inicio')">
+                🏠 Inicio
+            </button>
+
+            <button onclick="mostrarSeccion('transmision')">
+                📡 Transmisión
+            </button>
+
+            <button onclick="mostrarSeccion('multimedia')">
+                🎥 Multimedia
+            </button>
+
+            <button onclick="mostrarSeccion('creditos')">
+                👥 Créditos
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================================================== -->
+    <!-- CONTENIDO PRINCIPAL                                -->
+    <!-- ================================================== -->
+
+    <main>
+
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN: INICIO                                    -->
+        <!-- ================================================== -->
+
+        <section id="inicio" class="seccion">
+
+            <!-- ================================================== -->
+            <!-- PORTADA                                            -->
+            <!-- ================================================== -->
+
+            <div class="hero">
+
+                <p class="heroUniversidad">
+                    UNIVERSIDAD NACIONAL DE INGENIERÍA
+                </p>
+
+                <h2>
+                    UNI AeroNet
+                </h2>
+
+                <h3>
+                    SISTEMA DE MONITOREO AÉREO
+                </h3>
+
+                <p class="heroDescripcion">
+
+                    Plataforma web desarrollada para la visualización
+                    y supervisión de una transmisión de video en tiempo
+                    real proveniente de un vehículo aéreo no tripulado (UAV).
+
+                    El proyecto integra captura de video, redes de
+                    comunicación y servicios web para permitir que la
+                    señal pueda ser recibida y visualizada desde
+                    diferentes dispositivos conectados a la red.
+
+                </p>
+
+                <button class="botonPrincipal"
+                        onclick="mostrarSeccion('transmision')">
+
+                    📡 Ver transmisión
+
+                </button>
+
+            </div>
+
+
+            <!-- ================================================== -->
+            <!-- INFORMACIÓN DEL PROYECTO                            -->
+            <!-- ================================================== -->
+
+            <div class="proyectoInicio">
+
+                <div class="textoProyecto">
+
+                    <p class="etiqueta">
+                        NUESTRO PROYECTO
+                    </p>
+
+                    <h2>
+                        Tecnología, redes y transmisión
+                    </h2>
+
+                    <p>
+
+                        UNI AeroNet es un proyecto académico orientado
+                        al desarrollo de una plataforma para la recepción
+                        y visualización de video obtenido mediante un
+                        vehículo aéreo no tripulado.
+
+                    </p>
+
+                    <p>
+
+                        El sistema combina tecnologías de captura de video,
+                        comunicaciones de red y desarrollo web, creando
+                        una arquitectura capaz de transportar la información
+                        desde el sistema aéreo hasta una interfaz accesible
+                        para los usuarios.
+
+                    </p>
+
+                    <p>
+
+                        El proyecto busca demostrar cómo diferentes áreas
+                        de la ingeniería pueden integrarse para construir
+                        una solución de monitoreo y transmisión basada
+                        en tecnologías de redes.
+
+                    </p>
+
+                </div>
+
+
+                <div class="imagenDron">
+
+                    <img src="images/dron-referencia.jpg"
+                         alt="Dron cuadricóptero con cámara">
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================================== -->
+            <!-- ARQUITECTURA DEL SISTEMA                           -->
+            <!-- ================================================== -->
+
+            <div class="tecnologias">
+
+                <p class="etiqueta">
+                    ARQUITECTURA DEL SISTEMA
+                </p>
+
+                <h2>
+                    Componentes del proyecto
+                </h2>
+
+                <p class="descripcionTecnologias">
+
+                    El sistema integra diferentes componentes que trabajan
+                    conjuntamente para capturar, transportar y visualizar
+                    la señal de video obtenida desde el vehículo aéreo.
+
+                </p>
+
+
+                <div class="tarjetasTecnologia">
+
+                    <div class="tarjeta">
+
+                        <span class="icono">
+                            🚁
+                        </span>
+
+                        <h3>
+                            Captura aérea
+                        </h3>
+
+                        <p>
+
+                            El dron incorpora una cámara encargada de
+                            obtener el video durante el vuelo y generar
+                            la señal que será transmitida.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="tarjeta">
+
+                        <span class="icono">
+                            📡
+                        </span>
+
+                        <h3>
+                            Comunicación
+                        </h3>
+
+                        <p>
+
+                            La infraestructura de red permite transportar
+                            la información de video desde el sistema aéreo
+                            hasta los servicios encargados de distribuirla.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="tarjeta">
+
+                        <span class="icono">
+                            🌐
+                        </span>
+
+                        <h3>
+                            Plataforma web
+                        </h3>
+
+                        <p>
+
+                            La interfaz permite visualizar la transmisión
+                            y consultar información relacionada con el
+                            proyecto y su funcionamiento.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN: TRANSMISIÓN                               -->
+        <!-- ================================================== -->
+
+        <section id="transmision" class="seccion oculto">
+
+
+            <p class="etiqueta">
+                TRANSMISIÓN AÉREA
+            </p>
+
+            <h2>
+                Transmisión en vivo
+            </h2>
+
+            <p>
+                Señal proveniente del sistema aéreo.
+            </p>
+
+
+
+            <!-- ÁREA DEL VIDEO -->
+
+            <div id="videoContainer">
+
+                <img src="images/transmision-esperando.png"
+                     alt="Grupo 1 esperando la conexión de la transmisión">
+
+            </div>
+
+
+
+            <!-- ESTADO DE LA TRANSMISIÓN -->
+
+            <div class="estadoTransmision">
+
+
+                <div class="estadoItem">
+
+                    <span>
+                        ●
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            SISTEMA
+                        </strong>
+
+                        <p>
+                            ESPERANDO
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="estadoItem">
+
+                    <span>
+                        ●
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            CONEXIÓN
+                        </strong>
+
+                        <p>
+                            ESPERANDO
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="estadoItem">
+
+                    <span>
+                        ●
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            VIDEO
+                        </strong>
+
+                        <p>
+                            ESPERANDO
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="estadoItem">
+
+                    <span>
+                        ●
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            SEÑAL
+                        </strong>
+
+                        <p>
+                            NO DISPONIBLE
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN DE LA TRANSMISIÓN -->
+
+            <div class="sobreTransmision">
+
+                <p class="etiqueta">
+                    SOBRE LA TRANSMISIÓN
+                </p>
+
+                <p>
+
+                    Esta plataforma permite visualizar la señal
+                    de video obtenida mediante el sistema aéreo.
+                    Cuando la transmisión se encuentre disponible,
+                    será presentada en este espacio.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN: MULTIMEDIA                                -->
+        <!-- ================================================== -->
+
+        <section id="multimedia" class="seccion oculto">
+
+
+            <!-- ================================================== -->
+            <!-- ENCABEZADO                                         -->
+            <!-- ================================================== -->
+
+            <p class="etiqueta">
+                RECURSOS DEL PROYECTO
+            </p>
+
+            <h2>
+                Multimedia
+            </h2>
+
+            <p class="descripcionMultimedia">
+
+                Material audiovisual y recursos relacionados con los
+                sistemas aéreos, las comunicaciones inalámbricas y el
+                desarrollo de la plataforma UNI AeroNet.
+
+            </p>
+
+
+
+            <!-- ================================================== -->
+            <!-- CATEGORÍAS                                         -->
+            <!-- ================================================== -->
+
+            <div class="categoriasMultimedia">
+
+
+                <!-- ---------- Sistemas aéreos ---------- -->
+
+                <div class="categoriaMultimedia">
+
+                    <span class="iconoCategoria">
+                        🚁
+                    </span>
+
+                    <h3>
+                        Sistemas aéreos
+                    </h3>
+
+                    <p>
+                        Información y material relacionado con la
+                        construcción y funcionamiento de vehículos
+                        aéreos no tripulados.
+                    </p>
+
+                </div>
+
+
+                <!-- ---------- Comunicación y redes ---------- -->
+
+                <div class="categoriaMultimedia">
+
+                    <span class="iconoCategoria">
+                        📡
+                    </span>
+
+                    <h3>
+                        Comunicación y redes
+                    </h3>
+
+                    <p>
+                        Recursos relacionados con la transmisión
+                        inalámbrica de información y tecnologías
+                        de comunicación como LoRa.
+                    </p>
+
+                </div>
+
+
+                <!-- ---------- Desarrollo web ---------- -->
+
+                <div class="categoriaMultimedia">
+
+                    <span class="iconoCategoria">
+                        💻
+                    </span>
+
+                    <h3>
+                        Desarrollo web
+                    </h3>
+
+                    <p>
+                        Material relacionado con HTML, CSS, JavaScript
+                        y la construcción de la plataforma web.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================================================== -->
+            <!-- VIDEOS RECOMENDADOS                                -->
+            <!-- ================================================== -->
+
+            <div class="multimediaBloque">
+
+                <p class="etiqueta">
+                    VIDEOS RECOMENDADOS
+                </p>
+
+                <h3 class="tituloMultimedia">
+                    Guías y material de referencia
+                </h3>
+
+
+                <div class="videosGrid">
+
+
+                    <!-- ================================================== -->
+                    <!-- VIDEO 1: DRON                                     -->
+                    <!-- ================================================== -->
+
+                    <article class="videoYoutube">
+
+                        <div class="miniaturaVideo">
+
+                            <img src="https://img.youtube.com/vi/1TxWYpWXe4I/hqdefault.jpg"
+                                 alt="Tutorial para armar un dron paso a paso">
+
+                            <div class="iconoPlay">
+                                ▶
+                            </div>
+
+                        </div>
+
+
+                        <div class="videoContenido">
+
+                            <span class="categoriaVideo">
+                                🚁 SISTEMAS AÉREOS
+                            </span>
+
+                            <h3>
+                                Construcción de un dron paso a paso
+                            </h3>
+
+                            <p>
+                                Tutorial de referencia sobre el montaje
+                                y construcción de un vehículo aéreo no tripulado.
+                            </p>
+
+                            <a href="https://youtu.be/1TxWYpWXe4I"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="botonVideo">
+
+                                ▶ Ver en YouTube
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ================================================== -->
+                    <!-- VIDEO 2: LoRa                                     -->
+                    <!-- ================================================== -->
+
+                    <article class="videoYoutube">
+
+                        <div class="miniaturaVideo">
+
+                            <img src="https://img.youtube.com/vi/mCVtn_sfCrs/hqdefault.jpg"
+                                 alt="Transmisor y receptor LoRa">
+
+                            <div class="iconoPlay">
+                                ▶
+                            </div>
+
+                        </div>
+
+
+                        <div class="videoContenido">
+
+                            <span class="categoriaVideo">
+                                📡 COMUNICACIÓN Y REDES
+                            </span>
+
+                            <h3>
+                                Transmisor y receptor LoRa
+                            </h3>
+
+                            <p>
+                                Tutorial sobre la construcción de un sistema
+                                transmisor y receptor utilizando módulos LoRa,
+                                aplicable a drones y otros proyectos electrónicos.
+                            </p>
+
+                            <a href="https://youtu.be/mCVtn_sfCrs"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="botonVideo">
+
+                                ▶ Ver en YouTube
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ================================================== -->
+                    <!-- VIDEO 3: DESARROLLO WEB                            -->
+                    <!-- ================================================== -->
+
+                    <article class="videoYoutube">
+
+                        <div class="miniaturaVideo">
+
+                            <img src="https://img.youtube.com/vi/zwlcgpKV68Q/hqdefault.jpg"
+                                 alt="Tutorial para crear una página web">
+
+                            <div class="iconoPlay">
+                                ▶
+                            </div>
+
+                        </div>
+
+
+                        <div class="videoContenido">
+
+                            <span class="categoriaVideo">
+                                💻 DESARROLLO WEB
+                            </span>
+
+                            <h3>
+                                Desarrollo de una página web
+                            </h3>
+
+                            <p>
+                                Tutorial de referencia para la creación
+                                y estructuración de una página web mediante
+                                HTML y Visual Studio.
+                            </p>
+
+                            <a href="https://youtu.be/zwlcgpKV68Q"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="botonVideo">
+
+                                ▶ Ver en YouTube
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ================================================== -->
+                    <!-- VIDEO 4: YOUTUBE + HTML                            -->
+                    <!-- ================================================== -->
+
+                    <article class="videoYoutube">
+
+                        <div class="miniaturaVideo">
+
+                            <img src="hoa.np4"
+                                 alt="Cómo insertar un video de YouTube en HTML">
+
+                            <div class="iconoPlay">
+                                ▶
+                            </div>
+
+                        </div>
+
+
+                        <div class="videoContenido">
+
+                            <span class="categoriaVideo">
+                                💻 DESARROLLO WEB
+                            </span>
+
+                            <h3>
+                                Integración de videos en HTML
+                            </h3>
+
+                            <p>
+                                Tutorial sobre cómo incorporar contenido
+                                audiovisual de YouTube dentro de una página web.
+                            </p>
+
+                            <a href="https://youtu.be/uzB_bVqXgLU"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="botonVideo">
+
+                                ▶ Ver en YouTube
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================== -->
+            <!-- GALERÍA                                            -->
+            <!-- ================================================== -->
+
+            <div class="multimediaBloque">
+
+                <p class="etiqueta">
+                    GALERÍA
+                </p>
+
+                <h3 class="tituloMultimedia">
+                    Imágenes del proyecto
+                </h3>
+
+
+                <div class="galeriaGrid">
+
+
+                    <!-- ================================================== -->
+                    <!-- IMAGEN 1                                           -->
+                    <!-- ================================================== -->
+
+                    <article class="imagenGaleria">
+
+                        <img src="images/dron-referencia.jpg"
+                             alt="Imagen de referencia del dron">
+
+                        <div class="galeriaTexto">
+
+                            <h3>
+                                Sistema aéreo
+                            </h3>
+
+                            <p>
+                                Imagen de referencia del vehículo aéreo
+                                utilizado en el proyecto.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ================================================== -->
+                    <!-- IMAGEN 2                                           -->
+                    <!-- ================================================== -->
+
+                    <article class="imagenGaleria">
+
+                        <img src="images/wasa.jpg"
+                             alt="Imagen de referencia del wasa">
+
+                        <div class="galeriaTexto">
+
+                            <h3>
+                                foto de relleno
+                            </h3>
+
+                            <p>
+                                usada para referenciar a los
+                                fantasmones de la clase.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ================================================== -->
+                    <!-- IMAGEN 3                                           -->
+                    <!-- ================================================== -->
+
+                    <article class="imagenGaleria">
+
+                        <img src="images/grupo1-1.jpg"
+                             alt="Imagen de miembros del equipo telecom">
+
+                        <div class="galeriaTexto">
+
+                            <h3>
+                                grupo 1 chambeando
+                            </h3>
+
+                            <p>
+                                compañeritos modificando el codigo
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ================================================== -->
+                    <!-- IMAGEN 4                                           -->
+                    <!-- ================================================== -->
+
+                    <article class="imagenGaleria">
+
+                        <img src="images/grupo1-2.jpg"
+                             alt="otra perspectiva de los miembros">
+
+                        <div class="galeriaTexto">
+
+                            <h3>
+                                alumnos chambeadores
+                            </h3>
+
+                            <p>
+                                compañeres trabajando en la interfaz web
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================== -->
+            <!-- RECURSOS RELACIONADOS                              -->
+            <!-- ================================================== -->
+
+            <div class="recursosRelacionados">
+
+                <p class="etiqueta">
+                    RECURSOS RELACIONADOS
+                </p>
+
+                <h3>
+                    Conexión con UNI AeroNet
+                </h3>
+
+                <p>
+
+                    Los recursos presentados en esta sección están
+                    relacionados con las diferentes etapas que conforman
+                    UNI AeroNet. La construcción del sistema aéreo,
+                    la comunicación inalámbrica, la transmisión de datos
+                    y el desarrollo de la plataforma web forman parte de
+                    una misma arquitectura orientada al monitoreo y
+                    transmisión de información desde un sistema aéreo.
+
+                </p>
+
+                <p>
+
+                    Estos materiales funcionan como referencias técnicas
+                    y educativas para comprender algunas de las tecnologías
+                    utilizadas o relacionadas con el desarrollo del proyecto.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================================================== -->
+        <!-- SECCIÓN: CRÉDITOS                                  -->
+        <!-- ================================================== -->
+
+        <section id="creditos" class="seccion oculto">
+
+            <p class="etiqueta">
+                EQUIPO DEL PROYECTO
+            </p>
+
+            <h2>
+                Créditos
+            </h2>
+
+            <p>
+                Proyecto académico de Redes Telefónicas II · UNI
+            </p>
+
+
+            <!-- ================================================== -->
+            <!-- AGRADECIMIENTO ESPECIAL                            -->
+            <!-- ================================================== -->
+
+            <div class="cartaAgradecimiento">
+
+                <span class="comillaDecorativa">
+                    “
+                </span>
+
+                <p class="textoCarta">
+
+                    Al Ing. Jorge González, docente de Redes Telefónicas II:
+                    gracias por cada enseñanza, por la paciencia y por los
+                    consejos que nos guiaron durante todo este semestre.
+
+                    Este proyecto no habría llegado hasta aquí sin su
+                    acompañamiento y disposición para ayudarnos en cada etapa.
+
+                </p>
+
+                <p class="firmaCarta">
+                    — Con aprecio, el equipo de UNI AeroNet 🛰️
+                </p>
+
+            </div>
+
+
+            <!-- ================================================== -->
+            <!-- GRUPOS DEL PROYECTO                                -->
+            <!-- ================================================== -->
+
+            <h3 class="hudGrupoTitulo">
+                🚁 Grupo 0 · Captura aérea
+            </h3>
+
+            <div class="hudGrid">
+
+                <div class="hudCard hudPendiente">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-??
+                        </span>
+
+                        <span class="hudEstado pendiente">
+                            ● POR CONFIRMAR
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Integrantes por confirmar
+                    </h4>
+
+                    <p class="hudRol">
+                        Operación del dron y comunicación LoRa
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3 class="hudGrupoTitulo">
+                🎨 Grupo 1 · Diseño e interfaz web
+            </h3>
+
+            <div class="hudGrid">
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-01
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Ing. Mario Garay
+                    </h4>
+
+                    <p class="hudRol">
+                        Coordinación general
+                    </p>
+
+                    <p class="hudDato">
+                        Estructuración base del HTML y organización del proyecto.
+                    </p>
+
+                </div>
+
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-02
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Ing. Barbara Pérez
+                    </h4>
+
+                    <p class="hudRol">
+                        Contenido e identidad del proyecto
+                    </p>
+
+                    <p class="hudDato">
+                        Redacción de los textos de presentación y desarrollo
+                        de la sección Inicio.
+                    </p>
+
+                </div>
+
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-03
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Ing. Yarely Ibarra
+                    </h4>
+
+                    <p class="hudRol">
+                        Módulo de transmisión
+                    </p>
+
+                    <p class="hudDato">
+                        Diseño del reproductor de video y los indicadores
+                        de estado de la señal.
+                    </p>
+
+                </div>
+
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-04
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Ing. Camilo Amador
+                    </h4>
+
+                    <p class="hudRol">
+                        Multimedia y créditos
+                    </p>
+
+                    <p class="hudDato">
+                        Estructura de las secciones de contenido audiovisual
+                        y presentación del equipo.
+                    </p>
+
+                </div>
+
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-05
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Ing. Cristian Marenco
+                    </h4>
+
+                    <p class="hudRol">
+                        Identidad visual y navegación
+                    </p>
+
+                    <p class="hudDato">
+                        Paleta de colores, diseño responsivo y comportamiento
+                        del menú lateral.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3 class="hudGrupoTitulo">
+                💻 Grupo 2 · Lógica y transmisión
+            </h3>
+
+            <div class="hudGrid">
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-06
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Erwin Orozco
+                    </h4>
+
+                    <p class="hudRol">
+                        Desarrollo y funcionalidad
+                    </p>
+
+                </div>
+
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-07
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Christian Taleno
+                    </h4>
+
+                    <p class="hudRol">
+                        Desarrollo y funcionalidad
+                    </p>
+
+                </div>
+
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-08
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Adán López
+                    </h4>
+
+                    <p class="hudRol">
+                        Desarrollo y funcionalidad
+                    </p>
+
+                </div>
+
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-09
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Steven López
+                    </h4>
+
+                    <p class="hudRol">
+                        Desarrollo y funcionalidad
+                    </p>
+
+                </div>
+
+
+                <div class="hudCard hudIncognita">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-??
+                        </span>
+
+                        <span class="hudEstado pendiente">
+                            ● POR IDENTIFICAR
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        ❓ Integrante desconocido
+                    </h4>
+
+                    <p class="hudRol">
+                        Desarrollo y funcionalidad
+                    </p>
+
+                    <p class="hudDato">
+                        Nombre pendiente de confirmar.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3 class="hudGrupoTitulo">
+                ☁️ Grupo 3 · Infraestructura y servicios
+            </h3>
+
+            <div class="hudGrid">
+
+                <div class="hudCard">
+
+                    <div class="hudHeader">
+
+                        <span class="hudId">
+                            ID-10
+                        </span>
+
+                        <span class="hudEstado">
+                            ● ACTIVO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Luis Armando
+                    </h4>
+
+                    <p class="hudRol">
+                        Publicación en la nube y licencias
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================================== -->
+    <!-- PIE DE PÁGINA                                      -->
+    <!-- ================================================== -->
+
+    <footer>
+
+        <p>
+            Universidad Nacional de Ingeniería
+        </p>
+
+        <p>
+            Redes Telefónicas II · 2026
+        </p>
+
+    </footer>
+
+
+    <!-- ================================================== -->
+    <!-- JAVASCRIPT                                         -->
+    <!-- ================================================== -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
