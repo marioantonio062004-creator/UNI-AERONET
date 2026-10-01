@@ -288,143 +288,55 @@
 
         <section id="transmision" class="seccion oculto">
 
+            <p class="etiqueta">TRANSMISIÓN AÉREA</p>
+            <h2>Transmisión en vivo</h2>
+            <p>Señal proveniente del sistema aéreo.</p>
 
-            <p class="etiqueta">
-                TRANSMISIÓN AÉREA
-            </p>
-
-            <h2>
-                Transmisión en vivo
-            </h2>
-
-            <p>
-                Señal proveniente del sistema aéreo.
-            </p>
-
-
-
-            <<!-- ÁREA DEL VIDEO -->
-            <div id="videoContainer" style="display: flex; justify-content: center; align-items: center; overflow: hidden; background-color: #000; border-radius: 8px; min-height: 350px;">
-
-                <!-- Aquí colocas la URL de Serveo + /video al final -->
-                <img src="https://c60981c32503ef01-170-80-16-164.serveousercontent.com/video"
-                     alt="Transmisión en vivo del Dron"
-                     style="transform: rotate(90deg); max-width: 100%; height: auto; border-radius: 8px;">
-
+            <!-- CONFIGURACIÓN DE LA FUENTE -->
+            <div class="configVideo">
+                <input type="text" id="ipInput" placeholder="192.168.1.50:8080  o  https://tu-tunel.com">
+                <button id="btnConectar" class="botonPrincipal">🔗 Conectar</button>
+                <button id="btnRotar" class="botonPrincipal">🔄 Rotar</button>
             </div>
 
-
+            <!-- ÁREA DEL VIDEO -->
+            <div id="videoContainer">
+                <img id="videoStream" alt="Transmisión en vivo del Dron">
+            </div>
 
             <!-- ESTADO DE LA TRANSMISIÓN -->
-
             <div class="estadoTransmision">
 
-
                 <div class="estadoItem">
-
-                    <span>
-                        ●
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            SISTEMA
-                        </strong>
-
-                        <p>
-                            ESPERANDO
-                        </p>
-
-                    </div>
-
+                    <span>●</span>
+                    <div><strong>SISTEMA</strong><p id="estSistema">ESPERANDO</p></div>
                 </div>
 
-
                 <div class="estadoItem">
-
-                    <span>
-                        ●
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            CONEXIÓN
-                        </strong>
-
-                        <p>
-                            ESPERANDO
-                        </p>
-
-                    </div>
-
+                    <span>●</span>
+                    <div><strong>CONEXIÓN</strong><p id="estConexion">ESPERANDO</p></div>
                 </div>
 
-
                 <div class="estadoItem">
-
-                    <span>
-                        ●
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            VIDEO
-                        </strong>
-
-                        <p>
-                            ESPERANDO
-                        </p>
-
-                    </div>
-
+                    <span>●</span>
+                    <div><strong>VIDEO</strong><p id="estVideo">ESPERANDO</p></div>
                 </div>
 
-
                 <div class="estadoItem">
-
-                    <span>
-                        ●
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            SEÑAL
-                        </strong>
-
-                        <p>
-                            NO DISPONIBLE
-                        </p>
-
-                    </div>
-
+                    <span>●</span>
+                    <div><strong>SEÑAL</strong><p id="estSenal">NO DISPONIBLE</p></div>
                 </div>
-
 
             </div>
 
-
-
             <!-- INFORMACIÓN DE LA TRANSMISIÓN -->
-
             <div class="sobreTransmision">
-
-                <p class="etiqueta">
-                    SOBRE LA TRANSMISIÓN
-                </p>
-
+                <p class="etiqueta">SOBRE LA TRANSMISIÓN</p>
                 <p>
-
-                    Esta plataforma permite visualizar la señal
-                    de video obtenida mediante el sistema aéreo.
-                    Cuando la transmisión se encuentre disponible,
-                    será presentada en este espacio.
-
+                    Esta plataforma permite visualizar la señal de video obtenida
+                    mediante el sistema aéreo. Cuando la transmisión se encuentre
+                    disponible, será presentada en este espacio.
                 </p>
-
             </div>
 
         </section>
@@ -704,7 +616,7 @@
 
                         <div class="miniaturaVideo">
 
-                            <img src="https://youtu.be/uzB_bVqXgLU"
+                            <img src="https://img.youtube.com/vi/uzB_bVqXgLU/hqdefault.jpg"
                                  alt="Cómo insertar un video de YouTube en HTML">
 
                             <div class="iconoPlay">
