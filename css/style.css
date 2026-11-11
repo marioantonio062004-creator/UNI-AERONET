@@ -1195,6 +1195,403 @@ main {
 
 
 /* ================================================== */
+/* TRANSMISIÓN: VISOR DE CÁMARA                        */
+/* ================================================== */
+
+/* ---------- Marco del monitor ---------- */
+
+.monitor {
+    --c: var(--gris-azulado); /* color según el estado */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: var(--negro-azulado);
+    border: 1px solid var(--azul-marino);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .monitor[data-estado="conectando"] {
+        --c: var(--azul-claro);
+    }
+
+    .monitor[data-estado="recibiendo"] {
+        --c: #3FD68F;
+    }
+
+    .monitor[data-estado="error"] {
+        --c: #FF6B6B;
+    }
+
+/* ---------- Barra superior ---------- */
+
+.monitorBarra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: var(--azul-negro);
+    border-bottom: 1px solid var(--azul-marino);
+    color: var(--gris-azulado);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.monitorInsignia {
+    display: flex;
+    align-items: center;
+    color: var(--c);
+}
+
+.monitorPunto {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background-color: var(--c);
+}
+
+.monitor[data-estado="conectando"] .monitorPunto {
+    animation: parpadeo 1s ease-in-out infinite;
+}
+
+.monitor[data-estado="recibiendo"] .monitorPunto {
+    box-shadow: 0 0 8px var(--c);
+}
+
+@keyframes parpadeo {
+    50% {
+        opacity: 0.25;
+    }
+}
+
+/* ---------- Pantalla ---------- */
+
+.monitorPantalla {
+    position: relative;
+    height: var(--alto-video);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--negro-azulado);
+}
+
+    .monitorPantalla img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+        /* Sin dirección cargada, la imagen no se muestra */
+        .monitorPantalla img:not([src]) {
+            display: none;
+        }
+
+        /* Al girar 90°, el ancho pasa a ser el alto */
+        .monitorPantalla img.rotado {
+            width: var(--alto-video);
+            height: auto;
+            max-width: none;
+            transform: rotate(90deg);
+        }
+
+    /* Esquinas tipo visor */
+    .monitorPantalla::before,
+    .monitorPantalla::after {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        border: 2px solid var(--azul-claro);
+        opacity: 0.8;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .monitorPantalla::before {
+        top: 12px;
+        left: 12px;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .monitorPantalla::after {
+        right: 12px;
+        bottom: 12px;
+        border-left: none;
+        border-top: none;
+    }
+
+/* ---------- Pantalla de "sin señal" ---------- */
+
+.monitorSinSenal {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--negro-azulado);
+    background-image: linear-gradient(rgba(96, 175, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(96, 175, 255, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+.monitor[data-estado="recibiendo"] .monitorSinSenal {
+    display: none;
+}
+
+.monitorReticula {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+    color: var(--c);
+}
+
+.monitor[data-estado="conectando"] .monitorReticula {
+    animation: parpadeo 1s ease-in-out infinite;
+}
+
+.monitor .monitorMensaje {
+    margin: 0;
+    color: var(--c);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.monitor .monitorAyuda {
+    max-width: 440px;
+    margin: 0;
+    font-size: 13px;
+}
+
+/* ---------- Controles ---------- */
+
+.monitorControles {
+    display: grid;
+    gap: 10px;
+    padding: 16px;
+    border-top: 1px solid var(--azul-marino);
+}
+
+.monitorDireccion {
+    display: flex;
+    background-color: var(--azul-grisaceo);
+    border: 1px solid var(--azul-marino);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+    .monitorDireccion:focus-within {
+        border-color: var(--azul-brillante);
+    }
+
+    .monitorDireccion input {
+        flex: 1;
+        min-width: 0;
+        padding: 14px;
+        background: transparent;
+        border: none;
+        color: var(--blanco);
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 15px;
+    }
+
+        .monitorDireccion input:focus {
+            outline: none;
+        }
+
+.monitorPrefijo {
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    background-color: var(--azul-negro);
+    border-right: 1px solid var(--azul-marino);
+    color: var(--azul-claro);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.monitorVista {
+    color: var(--gris-azulado);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.monitorVistaClave {
+    color: var(--azul-claro);
+}
+
+/* ---------- Botones ---------- */
+
+.monitorBotones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btnMonitor {
+    padding: 11px 20px;
+    background-color: transparent;
+    color: var(--blanco);
+    border: 1px solid var(--azul-marino);
+    border-radius: 5px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btnMonitor:hover {
+        border-color: var(--azul-claro);
+        background-color: rgba(96, 175, 255, 0.1);
+    }
+
+    .btnMonitor:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+        .btnMonitor:disabled:hover {
+            border-color: var(--azul-marino);
+            background-color: transparent;
+        }
+
+.btnMonitorPrincipal {
+    background-color: var(--azul-brillante);
+    border-color: var(--azul-brillante);
+    font-weight: bold;
+}
+
+    .btnMonitorPrincipal:hover {
+        background-color: var(--azul-claro);
+        border-color: var(--azul-claro);
+    }
+
+/* ---------- Indicadores ---------- */
+
+.monitorDatos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--azul-marino);
+}
+
+.monitorDato {
+    padding: 14px 16px;
+    border-right: 1px solid var(--azul-marino);
+}
+
+    .monitorDato:last-child {
+        border-right: none;
+    }
+
+.monitorDatoEtiqueta {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--gris-azulado);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+}
+
+.monitorDatoValor {
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+}
+
+/* ---------- Guía de conexión ---------- */
+
+.guiaConexion {
+    max-width: 900px;
+    margin: 70px auto 20px auto;
+    text-align: left;
+}
+
+.guiaPasos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.guiaPaso {
+    padding-top: 16px;
+    border-top: 1px solid var(--azul-marino);
+}
+
+.guiaNumero {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--azul-claro);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.guiaPaso p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ---------- Accesibilidad ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .monitor .monitorPunto,
+    .monitor .monitorReticula {
+        animation: none;
+    }
+}
+
+/* ---------- Celulares ---------- */
+
+@media (max-width: 700px) {
+
+    .monitorDatos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .monitorDato:nth-child(2n) {
+        border-right: none;
+    }
+
+    .monitorDato:nth-child(n+3) {
+        border-top: 1px solid var(--azul-marino);
+    }
+
+    .btnMonitorPrincipal {
+        flex: 1 1 100%;
+    }
+
+    .btnMonitor:not(.btnMonitorPrincipal) {
+        flex: 1;
+    }
+
+    .guiaPasos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* ================================================== */
 /* SECCIÓN: MULTIMEDIA                                */
 /* ================================================== */
 
@@ -1474,18 +1871,6 @@ main {
 /* ================================================== */
 /* SECCIÓN: CRÉDITOS                                  */
 /* ================================================== */
-
-.grupo {
-    background-color: var(--azul-grisaceo);
-    border: 1px solid var(--azul-marino);
-    padding: 25px;
-    margin: 20px auto;
-    max-width: 600px;
-    border-radius: 8px;
-}
-
-
-
 /* ================================================== */
 /* CRÉDITOS: AGRADECIMIENTO ESPECIAL                  */
 /* ================================================== */
@@ -1608,10 +1993,6 @@ main {
     color: var(--azul-claro);
 }
 
-    .hudEstado.pendiente {
-        color: var(--gris-azulado);
-    }
-
 .hudCard h4 {
     margin: 0 0 5px 0;
     font-size: 16px;
@@ -1628,20 +2009,6 @@ main {
     margin-top: 8px !important;
     font-size: 12px !important;
 }
-
-.hudPendiente {
-    border-style: dashed;
-    opacity: 0.7;
-}
-
-.hudIncognita {
-    border-style: dashed;
-    border-color: var(--gris-azulado);
-}
-
-    .hudIncognita h4 {
-        color: var(--gris-claro);
-    }
 
 
 /* ================================================== */
@@ -1795,14 +2162,6 @@ img {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
-
-    /* ---------- Tecnologías ---------- */
-
-    .tarjetasTecnologia {
-        grid-template-columns: 1fr;
-    }
-
 
     /* ---------- Transmisión ---------- */
 

@@ -499,57 +499,149 @@
         <!-- SECCIÓN: TRANSMISIÓN                               -->
         <!-- ================================================== -->
 
-        <section id="transmision" class="seccion oculto">
+                <section id="transmision" class="seccion oculto">
 
             <p class="etiqueta">TRANSMISIÓN AÉREA</p>
-            <h2>Transmisión en vivo</h2>
-            <p>Señal proveniente del sistema aéreo.</p>
 
-            <!-- CONFIGURACIÓN DE LA FUENTE -->
-            <div class="configVideo">
-                <input type="text" id="ipInput" placeholder="192.168.1.50:8080  o  https://tu-tunel.com">
-                <button id="btnConectar" class="botonPrincipal">🔗 Conectar</button>
-                <button id="btnRotar" class="botonPrincipal">🔄 Rotar</button>
+            <h2>Visor de cámara</h2>
+
+            <p class="descripcionTecnologias">
+                Escribe la dirección de la cámara IP y conecta
+                para ver el video en esta pantalla.
+            </p>
+
+
+            <!-- ================================================== -->
+            <!-- MONITOR                                            -->
+            <!-- ================================================== -->
+
+            <div class="monitor" id="monitor" data-estado="espera">
+
+                <!-- Barra superior -->
+                <div class="monitorBarra">
+                    <span>CAM 01 · UAV</span>
+                    <span class="monitorInsignia">
+                        <i class="monitorPunto"></i>
+                        <span id="insignia">SIN SEÑAL</span>
+                    </span>
+                </div>
+
+                <!-- Pantalla -->
+                <div class="monitorPantalla">
+
+                    <img id="videoStream" alt="Transmisión de la cámara">
+
+                    <div class="monitorSinSenal">
+                        <svg class="monitorReticula" viewBox="0 0 64 64" fill="none"
+                             stroke="currentColor" stroke-width="1.5"
+                             stroke-linecap="round" aria-hidden="true">
+                            <circle cx="32" cy="32" r="18"/>
+                            <circle cx="32" cy="32" r="2" fill="currentColor"/>
+                            <line x1="32" y1="4" x2="32" y2="14"/>
+                            <line x1="32" y1="50" x2="32" y2="60"/>
+                            <line x1="4" y1="32" x2="14" y2="32"/>
+                            <line x1="50" y1="32" x2="60" y2="32"/>
+                        </svg>
+                        <p class="monitorMensaje" id="mensajePantalla">SIN SEÑAL</p>
+                        <p class="monitorAyuda" id="ayudaPantalla">
+                            Ingresa la dirección de la cámara para comenzar.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Controles -->
+                <div class="monitorControles">
+
+                    <div class="monitorDireccion">
+                        <span class="monitorPrefijo">URL</span>
+                        <input type="text" id="ipInput"
+                               placeholder="192.168.1.50:8080  o  https://tu-tunel.com"
+                               autocomplete="off" spellcheck="false">
+                    </div>
+
+                    <div class="monitorVista">
+                        <span class="monitorVistaClave">→</span>
+                        <span id="urlFinal"></span>
+                    </div>
+
+                    <div class="monitorBotones">
+                        <button id="btnConectar" class="btnMonitor btnMonitorPrincipal">Conectar</button>
+                        <button id="btnDesconectar" class="btnMonitor" disabled>Desconectar</button>
+                        <button id="btnRotar" class="btnMonitor">Rotar</button>
+                    </div>
+
+                </div>
+
+                <!-- Indicadores -->
+                <div class="monitorDatos">
+
+                    <div class="monitorDato">
+                        <span class="monitorDatoEtiqueta">CONEXIÓN</span>
+                        <span class="monitorDatoValor">
+                            <i class="monitorPunto"></i><span id="estConexion">ESPERANDO</span>
+                        </span>
+                    </div>
+
+                    <div class="monitorDato">
+                        <span class="monitorDatoEtiqueta">VIDEO</span>
+                        <span class="monitorDatoValor">
+                            <i class="monitorPunto"></i><span id="estVideo">ESPERANDO</span>
+                        </span>
+                    </div>
+
+                    <div class="monitorDato">
+                        <span class="monitorDatoEtiqueta">RESOLUCIÓN</span>
+                        <span class="monitorDatoValor" id="estResolucion">—</span>
+                    </div>
+
+                    <div class="monitorDato">
+                        <span class="monitorDatoEtiqueta">EN LÍNEA</span>
+                        <span class="monitorDatoValor" id="estTiempo">—</span>
+                    </div>
+
+                </div>
+
             </div>
 
-            <!-- ÁREA DEL VIDEO -->
-            <div id="videoContainer">
-                <img id="videoStream" alt="Transmisión en vivo del Dron">
-            </div>
 
-            <!-- ESTADO DE LA TRANSMISIÓN -->
-            <div class="estadoTransmision">
+            <!-- ================================================== -->
+            <!-- GUÍA DE CONEXIÓN                                   -->
+            <!-- ================================================== -->
 
-                <div class="estadoItem">
-                    <span>●</span>
-                    <div><strong>SISTEMA</strong><p id="estSistema">ESPERANDO</p></div>
+            <div class="guiaConexion">
+
+                <p class="etiqueta">CÓMO CONECTARSE</p>
+
+                <div class="guiaPasos">
+
+                    <div class="guiaPaso">
+                        <span class="guiaNumero">01</span>
+                        <p>
+                            En el celular, abre la app de cámara IP e inicia
+                            el servidor de video.
+                        </p>
+                    </div>
+
+                    <div class="guiaPaso">
+                        <span class="guiaNumero">02</span>
+                        <p>
+                            Anota la dirección IP y el puerto que muestra
+                            la app, por ejemplo 192.168.1.50:8080.
+                        </p>
+                    </div>
+
+                    <div class="guiaPaso">
+                        <span class="guiaNumero">03</span>
+                        <p>
+                            Escríbela arriba y pulsa Conectar. Con una dirección
+                            local, el celular y este dispositivo deben estar
+                            en la misma red.
+                        </p>
+                    </div>
+
                 </div>
 
-                <div class="estadoItem">
-                    <span>●</span>
-                    <div><strong>CONEXIÓN</strong><p id="estConexion">ESPERANDO</p></div>
-                </div>
-
-                <div class="estadoItem">
-                    <span>●</span>
-                    <div><strong>VIDEO</strong><p id="estVideo">ESPERANDO</p></div>
-                </div>
-
-                <div class="estadoItem">
-                    <span>●</span>
-                    <div><strong>SEÑAL</strong><p id="estSenal">NO DISPONIBLE</p></div>
-                </div>
-
-            </div>
-
-            <!-- INFORMACIÓN DE LA TRANSMISIÓN -->
-            <div class="sobreTransmision">
-                <p class="etiqueta">SOBRE LA TRANSMISIÓN</p>
-                <p>
-                    Esta plataforma permite visualizar la señal de video obtenida
-                    mediante el sistema aéreo. Cuando la transmisión se encuentre
-                    disponible, será presentada en este espacio.
-                </p>
             </div>
 
         </section>
