@@ -11,7 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>UNI AeroNet</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -109,24 +111,58 @@
                 </h3>
 
                 <p class="heroDescripcion">
-
-                    Plataforma web desarrollada para la visualización
-                    y supervisión de una transmisión de video en tiempo
-                    real proveniente de un vehículo aéreo no tripulado (UAV).
-
-                    El proyecto integra captura de video, redes de
-                    comunicación y servicios web para permitir que la
-                    señal pueda ser recibida y visualizada desde
-                    diferentes dispositivos conectados a la red.
-
+                    Video en tiempo real desde una cámara IP,
+                    visible desde cualquier dispositivo con navegador.
                 </p>
 
-                <button class="botonPrincipal"
-                        onclick="mostrarSeccion('transmision')">
+                <div class="heroBotones">
 
-                    📡 Ver transmisión
+                    <button class="botonPrincipal"
+                            onclick="mostrarSeccion('transmision')">
+                        Ver transmisión
+                    </button>
 
-                </button>
+                    <button class="botonSecundario"
+                            onclick="mostrarSeccion('creditos')">
+                        Conocer al equipo
+                    </button>
+
+                </div>
+
+                <div class="heroDatos">
+                    <span>VIDEO EN TIEMPO REAL</span>
+                    <span>CÁMARA IP</span>
+                    <span>GITHUB PAGES</span>
+                </div>
+
+            </div>
+
+
+            <!-- ================================================== -->
+            <!-- CIFRAS DEL PROYECTO                                -->
+            <!-- ================================================== -->
+
+            <div class="cifras">
+
+                <div class="cifra">
+                    <strong>5</strong>
+                    <span>TRABAJARON EN LA WEB</span>
+                </div>
+
+                <div class="cifra">
+                    <strong>+7</strong>
+                    <span>APOYARON CON EL DRON</span>
+                </div>
+
+                <div class="cifra">
+                    <strong>2</strong>
+                    <span>SECCIONES DE CLASE</span>
+                </div>
+
+                <div class="cifra">
+                    <strong>1</strong>
+                    <span>DRON</span>
+                </div>
 
             </div>
 
@@ -144,36 +180,45 @@
                     </p>
 
                     <h2>
-                        Tecnología, redes y transmisión
+                        Video aéreo, directo a tu navegador
                     </h2>
 
                     <p>
-
-                        UNI AeroNet es un proyecto académico orientado
-                        al desarrollo de una plataforma para la recepción
-                        y visualización de video obtenido mediante un
-                        vehículo aéreo no tripulado.
-
+                        UNI AeroNet es un proyecto de Redes Telefónicas II en la
+                        UNI. Su meta es fácil de decir y menos fácil de lograr:
+                        ver en una página web el video que captura una cámara IP,
+                        sin instalar nada.
                     </p>
 
                     <p>
-
-                        El sistema combina tecnologías de captura de video,
-                        comunicaciones de red y desarrollo web, creando
-                        una arquitectura capaz de transportar la información
-                        desde el sistema aéreo hasta una interfaz accesible
-                        para los usuarios.
-
+                        En el camino se juntan tres áreas: captura de video,
+                        comunicaciones de red y desarrollo web. Esta plataforma
+                        es la parte que lo muestra.
                     </p>
 
-                    <p>
+                    <div class="fichaTecnica">
 
-                        El proyecto busca demostrar cómo diferentes áreas
-                        de la ingeniería pueden integrarse para construir
-                        una solución de monitoreo y transmisión basada
-                        en tecnologías de redes.
+                        <div class="fichaFila">
+                            <span class="fichaClave">FUENTE</span>
+                            <span class="fichaValor">Celular con app de cámara IP</span>
+                        </div>
 
-                    </p>
+                        <div class="fichaFila">
+                            <span class="fichaClave">FORMATO</span>
+                            <span class="fichaValor">Video MJPEG por HTTP</span>
+                        </div>
+
+                        <div class="fichaFila">
+                            <span class="fichaClave">ACCESO</span>
+                            <span class="fichaValor">Navegador web · GitHub Pages</span>
+                        </div>
+
+                        <div class="fichaFila">
+                            <span class="fichaClave">CURSO</span>
+                            <span class="fichaValor">Redes Telefónicas II · UNI</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -183,7 +228,145 @@
                     <img src="images/dron-referencia.jpg"
                          alt="Dron cuadricóptero con cámara">
 
+                    <span class="imagenEtiqueta">● NUESTRO DRON</span>
+
                 </div>
+
+            </div>
+
+
+            <!-- ================================================== -->
+            <!-- EQUIPO DE DESARROLLO WEB (ORGANIGRAMA)             -->
+            <!-- ================================================== -->
+
+            <div class="equipoWeb">
+
+                <p class="etiqueta">
+                    EQUIPO DE DESARROLLO WEB
+                </p>
+
+                <h2>
+                    Quiénes construimos UNI AeroNet
+                </h2>
+
+                <p class="descripcionTecnologias">
+                    Cinco integrantes, una sola plataforma: desde la primera
+                    línea de código hasta su publicación en la web.
+                </p>
+
+
+                <div class="redEquipo">
+
+                    <!-- Líneas (enlaces) y puntos de luz que viajan por ellas -->
+                    <svg class="redEnlaces" viewBox="0 0 1000 520"
+                         preserveAspectRatio="none" aria-hidden="true">
+
+                        <!-- Enlaces principales -->
+                        <path class="redEnlace" d="M500,80 C500,170 280,170 280,260" />
+                        <path class="redEnlace" d="M500,80 C500,170 720,170 720,260" />
+                        <path class="redEnlace" d="M280,260 C280,350 380,350 380,450" />
+                        <path class="redEnlace" d="M720,260 C720,350 620,350 620,450" />
+
+                        <!-- Enlaces secundarios (punteados) -->
+                        <path class="redEnlace leve" d="M280,260 L720,260" />
+                        <path class="redEnlace leve" d="M280,260 C280,360 620,340 620,450" />
+                        <path class="redEnlace leve" d="M720,260 C720,360 380,340 380,450" />
+
+                        <!-- Puntos de luz -->
+                        <circle class="redPaquete" r="3.5">
+                            <animateMotion dur="3s" repeatCount="indefinite"
+                                           path="M500,80 C500,170 280,170 280,260" />
+                            <animate attributeName="opacity" values="0;1;1;0"
+                                     keyTimes="0;0.15;0.85;1" dur="3s"
+                                     repeatCount="indefinite" />
+                        </circle>
+
+                        <circle class="redPaquete" r="3.5">
+                            <animateMotion dur="3s" repeatCount="indefinite"
+                                           path="M500,80 C500,170 720,170 720,260" />
+                            <animate attributeName="opacity" values="0;1;1;0"
+                                     keyTimes="0;0.15;0.85;1" dur="3s"
+                                     repeatCount="indefinite" />
+                        </circle>
+
+                        <circle class="redPaquete" r="3.5">
+                            <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"
+                                           path="M280,260 C280,350 380,350 380,450" />
+                            <animate attributeName="opacity" values="0;1;1;0"
+                                     keyTimes="0;0.15;0.85;1" dur="3s" begin="1.5s"
+                                     repeatCount="indefinite" />
+                        </circle>
+
+                        <circle class="redPaquete" r="3.5">
+                            <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"
+                                           path="M720,260 C720,350 620,350 620,450" />
+                            <animate attributeName="opacity" values="0;1;1;0"
+                                     keyTimes="0;0.15;0.85;1" dur="3s" begin="1.5s"
+                                     repeatCount="indefinite" />
+                        </circle>
+
+                    </svg>
+
+
+                    <!-- Nodo 1: líder -->
+                    <div class="redNodo redLider der">
+                        <span class="redPunto"></span>
+                        <div class="redTexto">
+                            <span class="redRango">01 · LÍDER DEL PROYECTO</span>
+                            <h4>Mario César Garay Largaespada</h4>
+                            <p class="redRol">Coordinación y supervisión general</p>
+                        </div>
+                    </div>
+
+                    <!-- Nodo 2 -->
+                    <div class="redNodo redArea izq">
+                        <span class="redPunto"></span>
+                        <div class="redTexto">
+                            <span class="redRango">02 · RESPONSABLE DE ÁREA</span>
+                            <h4>Bárbara Patricia Pérez Herrera</h4>
+                            <p class="redRol">Diseño visual y publicación</p>
+                        </div>
+                    </div>
+
+                    <!-- Nodo 3 -->
+                    <div class="redNodo redArea der">
+                        <span class="redPunto"></span>
+                        <div class="redTexto">
+                            <span class="redRango">03 · RESPONSABLE DE ÁREA</span>
+                            <h4>Yarely del Carmen Ibarra Pastora</h4>
+                            <p class="redRol">Sistema de transmisión</p>
+                        </div>
+                    </div>
+
+                    <!-- Nodo 4 -->
+                    <div class="redNodo redAcceso izq">
+                        <span class="redPunto"></span>
+                        <div class="redTexto">
+                            <span class="redRango">04 · INTEGRANTE DE ÁREA</span>
+                            <h4>Yuardi Camilo Amador</h4>
+                            <p class="redRol">Estructura y navegación web</p>
+                        </div>
+                    </div>
+
+                    <!-- Nodo 5 -->
+                    <div class="redNodo redAcceso der">
+                        <span class="redPunto"></span>
+                        <div class="redTexto">
+                            <span class="redRango">05 · INTEGRANTE DE ÁREA</span>
+                            <h4>Cristian Marcel Marenco Avilés</h4>
+                            <p class="redRol">Contenido multimedia</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <p class="notaAgradecimiento">
+                    Con el apoyo de Clarita Azucena Cano Ñurinda,
+                    María Celeste Ortiz Sánchez y al resto de gente
+                    de la sección 4T1-TEL, en la adquisición del
+                    dron y las pruebas aéreas.
+                </p>
 
             </div>
 
@@ -192,86 +375,116 @@
             <!-- ARQUITECTURA DEL SISTEMA                           -->
             <!-- ================================================== -->
 
-            <div class="tecnologias">
+            <div class="arquitectura">
 
                 <p class="etiqueta">
                     ARQUITECTURA DEL SISTEMA
                 </p>
 
                 <h2>
-                    Componentes del proyecto
+                    Así viaja el video
                 </h2>
 
                 <p class="descripcionTecnologias">
-
-                    El sistema integra diferentes componentes que trabajan
-                    conjuntamente para capturar, transportar y visualizar
-                    la señal de video obtenida desde el vehículo aéreo.
-
+                    Tres etapas, de la cámara a tu pantalla.
                 </p>
 
 
-                <div class="tarjetasTecnologia">
+                <div class="arqRecorrido">
 
-                    <div class="tarjeta">
-
-                        <span class="icono">
-                            🚁
-                        </span>
-
-                        <h3>
-                            Captura aérea
-                        </h3>
-
+                    <!-- Nodo 1: captura -->
+                    <div class="arqNodo">
+                        <div class="arqIcono">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" aria-hidden="true">
+                                <rect x="14" y="5" width="20" height="38" rx="4" />
+                                <circle cx="24" cy="13" r="2.5" />
+                                <line x1="21" y1="38" x2="27" y2="38" />
+                            </svg>
+                        </div>
+                        <span class="arqPaso">01 · CAPTURA</span>
+                        <h4>Un celular con cámara IP</h4>
                         <p>
-
-                            El dron incorpora una cámara encargada de
-                            obtener el video durante el vuelo y generar
-                            la señal que será transmitida.
-
+                            El móvil graba y publica el video en una
+                            dirección de la red.
                         </p>
-
                     </div>
 
+                    <div class="arqLinea"></div>
 
-                    <div class="tarjeta">
-
-                        <span class="icono">
-                            📡
-                        </span>
-
-                        <h3>
-                            Comunicación
-                        </h3>
-
+                    <!-- Nodo 2: transporte -->
+                    <div class="arqNodo">
+                        <div class="arqIcono">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" aria-hidden="true">
+                                <path d="M8 20c9-9 23-9 32 0" />
+                                <path d="M14 26c6-6 14-6 20 0" />
+                                <path d="M20 32c3-3 5-3 8 0" />
+                                <circle cx="24" cy="38" r="1.5" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <span class="arqPaso">02 · TRANSPORTE</span>
+                        <h4>La red lleva la señal</h4>
                         <p>
-
-                            La infraestructura de red permite transportar
-                            la información de video desde el sistema aéreo
-                            hasta los servicios encargados de distribuirla.
-
+                            El video viaja hasta una IP y un puerto.
+                            También se admite una URL pública (https).
                         </p>
-
                     </div>
 
+                    <div class="arqLinea"></div>
 
-                    <div class="tarjeta">
-
-                        <span class="icono">
-                            🌐
-                        </span>
-
-                        <h3>
-                            Plataforma web
-                        </h3>
-
+                    <!-- Nodo 3: visualización -->
+                    <div class="arqNodo">
+                        <div class="arqIcono">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" aria-hidden="true">
+                                <rect x="5" y="9" width="38" height="30" rx="3" />
+                                <line x1="5" y1="17" x2="43" y2="17" />
+                                <path d="M20 24l10 6-10 6z" />
+                            </svg>
+                        </div>
+                        <span class="arqPaso">03 · VISUALIZACIÓN</span>
+                        <h4>Tu navegador lo muestra</h4>
                         <p>
-
-                            La interfaz permite visualizar la transmisión
-                            y consultar información relacionada con el
-                            proyecto y su funcionamiento.
-
+                            UNI AeroNet recibe el flujo y pinta cada
+                            fotograma en pantalla, sin instalar nada.
                         </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Consola: lo que hace construirURL() -->
+                <div class="arqTerminal">
+
+                    <div class="arqTerminalTitulo">
+                        construirURL() · así arma UNI AeroNet la dirección del video
+                    </div>
+
+                    <div class="arqTerminalCuerpo">
+
+                        <div class="arqCodigo">
+                            <span class="arqCodigoClave">tú escribes</span>
+                            <span>192.168.1.50</span>
+                        </div>
+
+                        <div class="arqCodigo">
+                            <span class="arqCodigoClave">la plataforma suma</span>
+                            <span>http:// + :8080 + /video</span>
+                        </div>
+
+                        <div class="arqCodigo arqCodigoFinal">
+                            <span class="arqCodigoClave">dirección final</span>
+                            <span>http://192.168.1.50:8080/video</span>
+                        </div>
+
+                        <div class="arqCodigo">
+                            <span class="arqCodigoClave">el navegador la pinta en</span>
+                            <span>&lt;img id="videoStream"&gt;</span>
+                        </div>
 
                     </div>
 
@@ -876,365 +1089,131 @@
             <!-- ================================================== -->
             <!-- GRUPOS DEL PROYECTO                                -->
             <!-- ================================================== -->
+            <!-- ================================================== -->
+            <!-- EQUIPO 5T1-TEL                                     -->
+            <!-- ================================================== -->
 
             <h3 class="hudGrupoTitulo">
-                🚁 Grupo 0 · Captura aérea
+                🎨 Equipo de desarrollo · 5T1-TEL-S (Grupo 1)
             </h3>
 
             <div class="hudGrid">
 
-                <div class="hudCard hudPendiente">
-
+                <div class="hudCard hudDestacado">
                     <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-??
-                        </span>
-
-                        <span class="hudEstado pendiente">
-                            ● POR CONFIRMAR
-                        </span>
-
+                        <span class="hudId">ID-01</span>
+                        <span class="hudEstado">● ACTIVO</span>
                     </div>
-
-                    <h4>
-                        Integrantes por confirmar
-                    </h4>
-
-                    <p class="hudRol">
-                        Operación del dron y comunicación LoRa
+                    <h4>Mario César Garay Largaespada</h4>
+                    <p class="hudRol">Líder, coordinador y supervisor general</p>
+                    <p class="hudDato">
+                        Supervisó todas las etapas del proyecto y revisó la
+                        integración, coherencia y funcionamiento de los componentes.
                     </p>
+                </div>
 
+                <div class="hudCard hudDestacado">
+                    <div class="hudHeader">
+                        <span class="hudId">ID-02</span>
+                        <span class="hudEstado">● ACTIVO</span>
+                    </div>
+                    <h4>Bárbara Patricia Pérez Herrera</h4>
+                    <p class="hudRol">Diseño visual y publicación</p>
+                    <p class="hudDato">
+                        Diseño visual institucional de la plataforma y
+                        publicación del sitio mediante GitHub Pages.
+                    </p>
+                </div>
+
+                <div class="hudCard hudDestacado">
+                    <div class="hudHeader">
+                        <span class="hudId">ID-03</span>
+                        <span class="hudEstado">● ACTIVO</span>
+                    </div>
+                    <h4>Yarely del Carmen Ibarra Pastora</h4>
+                    <p class="hudRol">Sistema de transmisión</p>
+                    <p class="hudDato">
+                        Propuesta y configuración de la transmisión mediante
+                        cámara IP, utilizando un dispositivo móvil.
+                    </p>
+                </div>
+
+                <div class="hudCard hudDestacado">
+                    <div class="hudHeader">
+                        <span class="hudId">ID-04</span>
+                        <span class="hudEstado">● ACTIVO</span>
+                    </div>
+                    <h4>yuardi Camilo Amador</h4>
+                    <p class="hudRol">Estructura y navegación web</p>
+                    <p class="hudDato">
+                        Estructura de la plataforma, organización del contenido
+                        y navegación entre secciones.
+                    </p>
+                </div>
+
+                <div class="hudCard hudDestacado">
+                    <div class="hudHeader">
+                        <span class="hudId">ID-05</span>
+                        <span class="hudEstado">● ACTIVO</span>
+                    </div>
+                    <h4>Cristian Marcel Marenco Avilés</h4>
+                    <p class="hudRol">Contenido multimedia</p>
+                    <p class="hudDato">
+                        Organización de los recursos audiovisuales y de la
+                        presentación informativa del proyecto.
+                    </p>
                 </div>
 
             </div>
 
 
+            <!-- ================================================== -->
+            <!-- APOYO DE LA SECCIÓN 4T1-TEL                        -->
+            <!-- ================================================== -->
+
             <h3 class="hudGrupoTitulo">
-                🎨 Grupo 1 · Diseño e interfaz web
+                🚁 Apoyo del proyecto · Sección 4T1-TEL-S
             </h3>
 
             <div class="hudGrid">
 
-                <div class="hudCard">
-
+                <div class="hudCard hudDestacado">
                     <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-01
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
+                        <span class="hudId">COL-01</span>
+                        <span class="hudEstado">● COLABORADORA</span>
                     </div>
-
-                    <h4>
-                        Ing. Mario Garay
-                    </h4>
-
-                    <p class="hudRol">
-                        Coordinación general
-                    </p>
-
+                    <h4>Clarita Azucena Cano Ñurinda</h4>
+                    <p class="hudRol">Apoyo del proyecto · 4T1-TEL</p>
                     <p class="hudDato">
-                        Estructuración base del HTML y organización del proyecto.
+                        Sección que colaboró en la adquisición del dron
+                        y en la realización de las pruebas aéreas.
                     </p>
-
                 </div>
 
-
-                <div class="hudCard">
-
+                <div class="hudCard hudDestacado">
                     <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-02
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
+                        <span class="hudId">COL-02</span>
+                        <span class="hudEstado">● COLABORADORA</span>
                     </div>
-
-                    <h4>
-                        Ing. Barbara Pérez
-                    </h4>
-
-                    <p class="hudRol">
-                        Contenido e identidad del proyecto
-                    </p>
-
+                    <h4>María Celeste Ortiz Sánchez</h4>
+                    <p class="hudRol">Apoyo del proyecto · 4T1-TEL</p>
                     <p class="hudDato">
-                        Redacción de los textos de presentación y desarrollo
-                        de la sección Inicio.
+                        Sección que colaboró en la adquisición del dron
+                        y en la realización de las pruebas aéreas.
                     </p>
-
-                </div>
-
-
-                <div class="hudCard">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-03
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        Ing. Yarely Ibarra
-                    </h4>
-
-                    <p class="hudRol">
-                        Módulo de transmisión
-                    </p>
-
-                    <p class="hudDato">
-                        Diseño del reproductor de video y los indicadores
-                        de estado de la señal.
-                    </p>
-
-                </div>
-
-
-                <div class="hudCard">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-04
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        Ing. Camilo Amador
-                    </h4>
-
-                    <p class="hudRol">
-                        Multimedia y créditos
-                    </p>
-
-                    <p class="hudDato">
-                        Estructura de las secciones de contenido audiovisual
-                        y presentación del equipo.
-                    </p>
-
-                </div>
-
-
-                <div class="hudCard">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-05
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        Ing. Cristian Marenco
-                    </h4>
-
-                    <p class="hudRol">
-                        Identidad visual y navegación
-                    </p>
-
-                    <p class="hudDato">
-                        Paleta de colores, diseño responsivo y comportamiento
-                        del menú lateral.
-                    </p>
-
                 </div>
 
             </div>
 
 
-            <h3 class="hudGrupoTitulo">
-                💻 Grupo 2 · Lógica y transmisión
-            </h3>
+            <!-- ================================================== -->
+            <!-- AGRADECIMIENTO GENERAL                             -->
+            <!-- ================================================== -->
 
-            <div class="hudGrid">
-
-                <div class="hudCard">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-06
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        Erwin Orozco
-                    </h4>
-
-                    <p class="hudRol">
-                        Desarrollo y funcionalidad
-                    </p>
-
-                </div>
-
-
-                <div class="hudCard">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-07
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        Christian Taleno
-                    </h4>
-
-                    <p class="hudRol">
-                        Desarrollo y funcionalidad
-                    </p>
-
-                </div>
-
-
-                <div class="hudCard">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-08
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        Adán López
-                    </h4>
-
-                    <p class="hudRol">
-                        Desarrollo y funcionalidad
-                    </p>
-
-                </div>
-
-
-                <div class="hudCard">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-09
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        Steven López
-                    </h4>
-
-                    <p class="hudRol">
-                        Desarrollo y funcionalidad
-                    </p>
-
-                </div>
-
-
-                <div class="hudCard hudIncognita">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-??
-                        </span>
-
-                        <span class="hudEstado pendiente">
-                            ● POR IDENTIFICAR
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        ❓ Integrante desconocido
-                    </h4>
-
-                    <p class="hudRol">
-                        Desarrollo y funcionalidad
-                    </p>
-
-                    <p class="hudDato">
-                        Nombre pendiente de confirmar.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <h3 class="hudGrupoTitulo">
-                ☁️ Grupo 3 · Infraestructura y servicios
-            </h3>
-
-            <div class="hudGrid">
-
-                <div class="hudCard">
-
-                    <div class="hudHeader">
-
-                        <span class="hudId">
-                            ID-10
-                        </span>
-
-                        <span class="hudEstado">
-                            ● ACTIVO
-                        </span>
-
-                    </div>
-
-                    <h4>
-                        Luis Armando
-                    </h4>
-
-                    <p class="hudRol">
-                        Publicación en la nube y licencias
-                    </p>
-
-                </div>
-
-            </div>
+            <p class="notaAgradecimiento">
+                Gracias también a los demás compañeros de la sección 4T1-TEL,
+                que apoyaron con la recaudación para la compra del dron.
+            </p>
 
         </section>
 

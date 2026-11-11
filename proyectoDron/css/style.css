@@ -379,6 +379,707 @@ main {
     font-size: 14px;
 }
 
+/* ================================================== */
+/* INICIO: EQUIPO DE DESARROLLO WEB (TOPOLOGÍA DE RED) */
+/* ================================================== */
+
+.equipoWeb {
+    width: 100%;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+.redEquipo {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    margin: 50px auto 0 auto;
+}
+
+/* ---------- Enlaces ---------- */
+
+.redEnlaces {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.redEnlace {
+    fill: none;
+    stroke: rgba(96, 175, 255, 0.4);
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+}
+
+    .redEnlace.leve {
+        stroke: rgba(96, 175, 255, 0.2);
+        stroke-dasharray: 4 6;
+    }
+
+.redPaquete {
+    fill: var(--azul-claro);
+    filter: drop-shadow(0 0 4px var(--azul-brillante));
+}
+
+/* ---------- Nodos ---------- */
+
+.redNodo {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+/* Posición de cada nodo (coinciden con las coordenadas del SVG) */
+.redLider {
+    left: 50%;
+    top: 15.4%;
+    --d: 64px;
+    --nucleo: 9px;
+}
+
+.redArea.izq {
+    left: 28%;
+    top: 50%;
+    --d: 44px;
+    --nucleo: 6px;
+}
+
+.redArea.der {
+    left: 72%;
+    top: 50%;
+    --d: 44px;
+    --nucleo: 6px;
+}
+
+.redAcceso.izq {
+    left: 38%;
+    top: 86.5%;
+    --d: 30px;
+    --nucleo: 4px;
+}
+
+.redAcceso.der {
+    left: 62%;
+    top: 86.5%;
+    --d: 30px;
+    --nucleo: 4px;
+}
+
+.redPunto {
+    position: absolute;
+    left: calc(var(--d) / -2);
+    top: calc(var(--d) / -2);
+    width: var(--d);
+    height: var(--d);
+    border: 2px solid var(--azul-brillante);
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--azul-claro) 0, var(--azul-claro) var(--nucleo), rgba(22, 131, 255, 0.22) calc(var(--nucleo) + 1px));
+    transition: 0.3s;
+}
+
+    /* Anillo que se expande, como un ping de radar */
+    .redPunto::before {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border: 1px solid var(--azul-claro);
+        border-radius: 50%;
+        opacity: 0;
+        animation: pingNodo 3.6s ease-out infinite;
+    }
+
+.redArea .redPunto::before {
+    animation-delay: 1.2s;
+}
+
+.redAcceso .redPunto::before {
+    animation-delay: 2.4s;
+}
+
+.redLider .redPunto {
+    box-shadow: 0 0 35px rgba(22, 131, 255, 0.45);
+}
+
+.redNodo:hover .redPunto {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(22, 131, 255, 0.6);
+}
+
+@keyframes pingNodo {
+    0% {
+        transform: scale(0.7);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.9);
+        opacity: 0;
+    }
+}
+
+/* ---------- Textos junto a cada nodo ---------- */
+
+.redTexto {
+    position: absolute;
+    top: 0;
+    width: 190px;
+    transform: translateY(-50%);
+}
+
+.redLider .redTexto {
+    width: 270px;
+}
+
+.redNodo.izq .redTexto {
+    right: calc(var(--d) / 2 + 18px);
+    text-align: right;
+}
+
+.redNodo.der .redTexto {
+    left: calc(var(--d) / 2 + 18px);
+    text-align: left;
+}
+
+.redRango {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--azul-claro);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 10.5px;
+    letter-spacing: 1.2px;
+}
+
+.redTexto h4 {
+    margin: 0 0 4px 0;
+    font-size: 17px;
+    color: var(--blanco);
+}
+
+.redTexto .redRol {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* ---------- Accesibilidad ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .redPunto::before {
+        animation: none;
+    }
+
+    .redPaquete {
+        display: none;
+    }
+}
+
+/* ---------- Pantallas pequeñas: lista vertical con línea ---------- */
+
+@media (max-width: 860px) {
+
+    .redEquipo {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+        /* La línea vertical que une todos los nodos */
+        .redEquipo::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--azul-brillante), var(--azul-marino));
+        }
+
+    .redEnlaces {
+        display: none;
+    }
+
+    .redNodo,
+    .redNodo.izq,
+    .redNodo.der {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        --d: 26px;
+        --nucleo: 4px;
+    }
+
+    .redPunto {
+        position: relative;
+        left: auto;
+        top: auto;
+        flex: 0 0 var(--d);
+    }
+
+    .redNodo.izq .redTexto,
+    .redNodo.der .redTexto,
+    .redLider .redTexto {
+        position: static;
+        width: auto;
+        transform: none;
+        text-align: left;
+    }
+}
+
+
+/* ================================================== */
+/* INICIO: PORTADA CON FOTO Y CIFRAS                   */
+/* ================================================== */
+
+/* ---------- Portada ---------- */
+
+.hero {
+    min-height: 620px;
+    /* Cancela el relleno de la sección para que la foto ocupe todo el ancho */
+    margin: -70px -30px 0 -30px;
+    background-image: linear-gradient(180deg, rgba(7, 17, 31, 0.55) 0%, rgba(7, 17, 31, 0.85) 70%, var(--azul-oscuro) 100%), url("../images/dron-referencia.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+    .hero h2 {
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    }
+
+.heroBotones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+    .heroBotones .botonPrincipal {
+        margin-top: 0;
+    }
+
+.botonSecundario {
+    padding: 15px 30px;
+    background-color: transparent;
+    color: var(--blanco);
+    border: 1px solid var(--azul-claro);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .botonSecundario:hover {
+        background-color: rgba(96, 175, 255, 0.15);
+        transform: translateY(-3px);
+    }
+
+.heroDatos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+    .heroDatos span {
+        padding: 6px 14px;
+        border: 1px solid var(--azul-marino);
+        border-radius: 20px;
+        background-color: rgba(0, 59, 122, 0.35);
+        color: var(--azul-claro);
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+
+/* ---------- Franja de cifras ---------- */
+
+.cifras {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px 0;
+    border-top: 1px solid var(--azul-marino);
+    border-bottom: 1px solid var(--azul-marino);
+}
+
+.cifra strong {
+    display: block;
+    font-size: 48px;
+    color: var(--azul-claro);
+}
+
+.cifra span {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--gris-azulado);
+}
+
+/* ---------- Celulares ---------- */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 520px;
+        margin: -50px -20px 0 -20px;
+    }
+
+    .cifras {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cifra strong {
+        font-size: 38px;
+    }
+}
+
+
+/* ================================================== */
+/* INICIO: NUESTRO PROYECTO (FICHA Y MARCO DE FOTO)    */
+/* ================================================== */
+
+.fichaTecnica {
+    margin-top: 25px;
+    border-top: 1px solid var(--azul-marino);
+}
+
+.fichaFila {
+    display: flex;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--azul-marino);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+.fichaClave {
+    flex: 0 0 90px;
+    color: var(--azul-claro);
+    letter-spacing: 1px;
+}
+
+.fichaValor {
+    color: var(--gris-claro);
+}
+
+/* Esquinas tipo visor sobre la foto */
+.imagenDron {
+    position: relative;
+}
+
+    .imagenDron::before,
+    .imagenDron::after {
+        content: "";
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border: 2px solid var(--azul-claro);
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .imagenDron::before {
+        top: 12px;
+        left: 12px;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .imagenDron::after {
+        right: 12px;
+        bottom: 12px;
+        border-left: none;
+        border-top: none;
+    }
+
+.imagenEtiqueta {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    z-index: 2;
+    padding: 5px 10px;
+    background-color: rgba(2, 6, 11, 0.75);
+    border-radius: 4px;
+    color: var(--azul-claro);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+
+/* ================================================== */
+/* INICIO: ARQUITECTURA (RECORRIDO ANIMADO Y CONSOLA)  */
+/* ================================================== */
+
+.arquitectura {
+    width: 100%;
+    max-width: 1100px;
+    margin: 100px auto;
+}
+
+.arqRecorrido {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* ---------- Nodos ---------- */
+
+.arqNodo {
+    flex: 1;
+    padding: 30px 22px;
+    background-color: var(--azul-grisaceo);
+    border: 1px solid var(--azul-marino);
+    border-radius: 12px;
+}
+
+.arqIcono {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 18px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--azul-brillante);
+    border-radius: 50%;
+    color: var(--azul-claro);
+    background: radial-gradient(circle, rgba(22, 131, 255, 0.25), transparent 70%);
+    animation: pulsoNodo 3s ease-out infinite;
+}
+
+    .arqIcono svg {
+        width: 38px;
+        height: 38px;
+    }
+
+.arqPaso {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--azul-claro);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.arqNodo h4 {
+    margin: 0 0 10px 0;
+    font-size: 19px;
+    color: var(--blanco);
+}
+
+.arqNodo p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Cada nodo late cuando "le llega" la señal */
+.arqRecorrido > :nth-child(1) .arqIcono {
+    animation-delay: 0s;
+}
+
+.arqRecorrido > :nth-child(3) .arqIcono {
+    animation-delay: 1.4s;
+}
+
+.arqRecorrido > :nth-child(5) .arqIcono {
+    animation-delay: 2.8s;
+}
+
+/* ---------- Líneas con puntos de luz ---------- */
+
+.arqLinea {
+    position: relative;
+    flex: 0 0 90px;
+    height: 2px;
+    background-image: linear-gradient(90deg, var(--azul-marino) 50%, transparent 50%);
+    background-size: 12px 2px;
+}
+
+    .arqLinea::before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--azul-claro);
+        box-shadow: 0 0 12px var(--azul-brillante);
+        opacity: 0;
+        animation: paqueteH 3s linear infinite;
+    }
+
+.arqRecorrido > :nth-child(2)::before {
+    animation-delay: 0.4s;
+}
+
+.arqRecorrido > :nth-child(4)::before {
+    animation-delay: 1.8s;
+}
+
+/* ---------- Animaciones ---------- */
+
+@keyframes pulsoNodo {
+    0% {
+        box-shadow: 0 0 0 0 rgba(22, 131, 255, 0.45);
+    }
+
+    35% {
+        box-shadow: 0 0 0 14px rgba(22, 131, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(22, 131, 255, 0);
+    }
+}
+
+@keyframes paqueteH {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    33% {
+        left: calc(100% - 8px);
+        opacity: 0;
+    }
+
+    100% {
+        left: calc(100% - 8px);
+        opacity: 0;
+    }
+}
+
+@keyframes paqueteV {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    33% {
+        top: calc(100% - 8px);
+        opacity: 0;
+    }
+
+    100% {
+        top: calc(100% - 8px);
+        opacity: 0;
+    }
+}
+
+/* Respeta a quien tiene desactivadas las animaciones en su dispositivo */
+@media (prefers-reduced-motion: reduce) {
+    .arqIcono {
+        animation: none;
+    }
+
+    .arqLinea::before {
+        display: none;
+    }
+}
+
+/* ---------- Consola ---------- */
+
+.arqTerminal {
+    max-width: 760px;
+    margin: 50px auto 0 auto;
+    text-align: left;
+    background-color: var(--negro-azulado);
+    border: 1px solid var(--azul-marino);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.arqTerminalTitulo {
+    padding: 10px 18px;
+    background-color: var(--azul-negro);
+    border-bottom: 1px solid var(--azul-marino);
+    color: var(--gris-azulado);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.arqTerminalCuerpo {
+    padding: 18px;
+}
+
+.arqCodigo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--blanco);
+    word-break: break-all;
+}
+
+.arqCodigoClave {
+    flex: 0 0 200px;
+    color: var(--gris-azulado);
+}
+
+.arqCodigoFinal {
+    color: var(--azul-claro);
+}
+
+/* ---------- Celulares ---------- */
+
+@media (max-width: 700px) {
+
+    .arqRecorrido {
+        flex-direction: column;
+    }
+
+    .arqNodo {
+        width: 100%;
+    }
+
+    .arqLinea {
+        flex: 0 0 60px;
+        width: 2px;
+        height: 60px;
+        background-image: linear-gradient(180deg, var(--azul-marino) 50%, transparent 50%);
+        background-size: 2px 12px;
+    }
+
+        .arqLinea::before {
+            top: 0;
+            left: -3px;
+            animation-name: paqueteV;
+        }
+
+    .arqCodigoClave {
+        flex: 0 0 100%;
+    }
+}
+
 
 /* ================================================== */
 /* SECCIÓN: TRANSMISIÓN                               */
@@ -943,6 +1644,26 @@ main {
     }
 
 
+/* ================================================== */
+/* CRÉDITOS: TARJETAS DESTACADAS Y AGRADECIMIENTO      */
+/* ================================================== */
+
+.hudDestacado {
+    border-color: var(--azul-brillante);
+}
+
+    .hudDestacado::before {
+        opacity: 0.5;
+    }
+
+.seccion .notaAgradecimiento {
+    max-width: 650px;
+    margin: 50px auto 0 auto;
+    font-size: 14px;
+    font-style: italic;
+}
+
+
 
 /* ================================================== */
 /* PIE DE PÁGINA                                      */
@@ -1178,4 +1899,52 @@ img {
     .hudDato {
         font-size: 12px !important;
     }
+}
+
+
+
+
+
+
+
+
+
+/* ================================================== */
+/* FONDO: CARTA DE NAVEGACIÓN                          */
+/* ================================================== */
+
+/* Capa 1: cuadrícula, puntos, resplandor y viñeta */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(22, 131, 255, 0.18), transparent 60%), radial-gradient(ellipse at center, transparent 55%, rgba(2, 6, 11, 0.75) 100%), radial-gradient(circle, rgba(96, 175, 255, 0.35) 1px, transparent 1.6px), linear-gradient(rgba(96, 175, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(96, 175, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px, 48px 48px;
+    background-position: 0 0, 0 0, -24px -24px, 0 0, 0 0;
+}
+
+/* Capa 2: grano fino */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+
+/* ================================================== */
+/* TIPOGRAFÍA DE TÍTULOS                               */
+/* ================================================== */
+
+header h1,
+.hero h2,
+.hero h3,
+.seccion h2,
+.cifra strong {
+    font-family: "Barlow Condensed", Arial, sans-serif;
 }
