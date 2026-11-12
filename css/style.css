@@ -1868,6 +1868,331 @@ main {
     }
 
 
+
+
+
+
+/* ================================================== */
+/* MULTIMEDIA: ARCHIVO DE MISIÓN                       */
+/* ================================================== */
+
+/* ---------- Portada ---------- */
+
+.mmPortada {
+    padding: 30px 0 10px 0;
+}
+
+.seccion .mmTitulo {
+    margin: 10px 0 20px 0;
+    font-size: clamp(60px, 14vw, 160px);
+    line-height: 0.9;
+    letter-spacing: 4px;
+}
+
+.mmTitulo span {
+    display: block;
+}
+
+    /* Primera mitad: solo contorno */
+    .mmTitulo span:first-child {
+        color: transparent;
+        -webkit-text-stroke: 2px var(--azul-claro);
+    }
+
+.mmLema {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+/* ---------- Cinta de texto ---------- */
+
+.mmCinta {
+    margin: 50px -30px 0 -30px;
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid var(--azul-marino);
+    border-bottom: 1px solid var(--azul-marino);
+    background-color: rgba(0, 59, 122, 0.18);
+}
+
+.mmCintaPista {
+    display: inline-flex;
+    animation: cintaMover 30s linear infinite;
+}
+
+/* Cada grupo mide al menos el ancho de la pantalla: así el bucle nunca deja huecos */
+.mmGrupo {
+    flex: 0 0 auto;
+    min-width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+    .mmGrupo span {
+        color: var(--azul-claro);
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 13px;
+        letter-spacing: 4px;
+    }
+
+@keyframes cintaMover {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ---------- Índice (filtro de videos) ---------- */
+
+.mmIndice {
+    max-width: 1000px;
+    margin: 50px auto 70px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 40px;
+}
+
+.mmIndiceItem {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 8px 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--gris-azulado);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .mmIndiceItem .mmNum {
+        color: var(--azul-claro);
+    }
+
+    .mmIndiceItem:hover,
+    .mmIndiceItem.activo {
+        color: var(--blanco);
+        border-bottom-color: var(--azul-brillante);
+    }
+
+/* ---------- Videos: fotogramas de película ---------- */
+
+.videosGrid {
+    counter-reset: fotograma;
+}
+
+.videoYoutube {
+    counter-increment: fotograma;
+    border-radius: 2px;
+}
+
+    .videoYoutube:hover {
+        border-color: var(--azul-claro);
+    }
+
+/* Perforaciones de la cinta, arriba y abajo de la miniatura */
+.miniaturaVideo::before,
+.miniaturaVideo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 16px;
+    z-index: 2;
+    background-color: rgba(2, 6, 11, 0.88);
+    background-image: linear-gradient(90deg, rgba(96, 175, 255, 0.55) 10px, transparent 10px);
+    background-size: 22px 6px;
+    background-repeat: repeat-x;
+    background-position: 6px 5px;
+}
+
+.miniaturaVideo::before {
+    top: 0;
+}
+
+.miniaturaVideo::after {
+    bottom: 0;
+}
+
+.miniaturaVideo img {
+    filter: saturate(0.7) brightness(0.85);
+}
+
+.videoYoutube:hover .miniaturaVideo img {
+    filter: none;
+}
+
+/* Número de fotograma (la numeración se ajusta sola al filtrar) */
+.videoContenido::before {
+    content: "FOTOGRAMA " counter(fotograma, decimal-leading-zero);
+    display: block;
+    margin-bottom: 10px;
+    color: var(--gris-azulado);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* ---------- Galería: hoja de contactos ---------- */
+
+.mosaico {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 12px;
+}
+
+.foto {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--negro-azulado);
+    border: 1px solid var(--azul-marino);
+    text-align: left;
+}
+
+.fotoGrande {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.mosaico .foto:nth-child(2) {
+    grid-column: span 2;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(1) contrast(1.05) brightness(0.85);
+    transition: 0.6s;
+}
+
+/* Tinte azul que unifica todas las fotos */
+.foto::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 59, 122, 0.45);
+    transition: 0.6s;
+    pointer-events: none;
+}
+
+/* Marca de recorte en la esquina */
+.foto::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 18px;
+    height: 18px;
+    border-top: 2px solid var(--azul-claro);
+    border-left: 2px solid var(--azul-claro);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.foto:hover img {
+    filter: none;
+    transform: scale(1.04);
+}
+
+.foto:hover::after {
+    opacity: 0;
+}
+
+/* Ficha que sube al pasar el cursor */
+.foto figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 14px 16px;
+    background: linear-gradient(transparent, rgba(2, 6, 11, 0.95) 35%);
+    transform: translateY(calc(100% - 66px));
+    transition: 0.4s;
+}
+
+.foto:hover figcaption {
+    transform: translateY(0);
+}
+
+.fotoId {
+    display: block;
+    color: var(--azul-claro);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.fotoTitulo {
+    display: block;
+    margin-top: 4px;
+    color: var(--blanco);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fotoDesc {
+    display: block;
+    margin-top: 6px;
+    color: var(--gris-azulado);
+    font-size: 13px;
+}
+
+/* ---------- Accesibilidad ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .mmCintaPista {
+        animation: none;
+    }
+}
+
+/* ---------- Celulares ---------- */
+
+@media (max-width: 700px) {
+
+    .mmCinta {
+        margin: 40px -20px 0 -20px;
+    }
+
+    .mosaico {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 240px;
+    }
+
+        .mosaico .fotoGrande,
+        .mosaico .foto:nth-child(2) {
+            grid-column: auto;
+            grid-row: auto;
+        }
+
+    /* Sin cursor en el celular: la ficha se ve completa */
+    .foto figcaption {
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* ================================================== */
 /* SECCIÓN: CRÉDITOS                                  */
 /* ================================================== */

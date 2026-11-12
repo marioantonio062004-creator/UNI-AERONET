@@ -651,484 +651,392 @@
         <!-- SECCIÓN: MULTIMEDIA                                -->
         <!-- ================================================== -->
 
-        <section id="multimedia" class="seccion oculto">
-
-
-            <!-- ================================================== -->
-            <!-- ENCABEZADO                                         -->
-            <!-- ================================================== -->
-
-            <p class="etiqueta">
-                RECURSOS DEL PROYECTO
-            </p>
-
-            <h2>
-                Multimedia
-            </h2>
-
-            <p class="descripcionMultimedia">
-
-                Material audiovisual y recursos relacionados con los
-                sistemas aéreos, las comunicaciones inalámbricas y el
-                desarrollo de la plataforma UNI AeroNet.
-
-            </p>
-
-
-
-            <!-- ================================================== -->
-            <!-- CATEGORÍAS                                         -->
-            <!-- ================================================== -->
-
-            <div class="categoriasMultimedia">
-
-
-                <!-- ---------- Sistemas aéreos ---------- -->
-
-                <div class="categoriaMultimedia">
-
-                    <span class="iconoCategoria">
-                        🚁
-                    </span>
-
-                    <h3>
-                        Sistemas aéreos
-                    </h3>
-
-                    <p>
-                        Información y material relacionado con la
-                        construcción y funcionamiento de vehículos
-                        aéreos no tripulados.
-                    </p>
-
-                </div>
-
-
-                <!-- ---------- Comunicación y redes ---------- -->
-
-                <div class="categoriaMultimedia">
-
-                    <span class="iconoCategoria">
-                        📡
-                    </span>
-
-                    <h3>
-                        Comunicación y redes
-                    </h3>
-
-                    <p>
-                        Recursos relacionados con la transmisión
-                        inalámbrica de información y tecnologías
-                        de comunicación como LoRa.
-                    </p>
-
-                </div>
-
-
-                <!-- ---------- Desarrollo web ---------- -->
-
-                <div class="categoriaMultimedia">
-
-                    <span class="iconoCategoria">
-                        💻
-                    </span>
-
-                    <h3>
-                        Desarrollo web
-                    </h3>
-
-                    <p>
-                        Material relacionado con HTML, CSS, JavaScript
-                        y la construcción de la plataforma web.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- ================================================== -->
-            <!-- VIDEOS RECOMENDADOS                                -->
-            <!-- ================================================== -->
-
-            <div class="multimediaBloque">
-
-                <p class="etiqueta">
-                    VIDEOS RECOMENDADOS
-                </p>
-
-                <h3 class="tituloMultimedia">
-                    Guías y material de referencia
-                </h3>
-
-
-                <div class="videosGrid">
+                <section id="multimedia" class="seccion oculto">
 
 
                     <!-- ================================================== -->
-                    <!-- VIDEO 1: DRON                                     -->
+                    <!-- PORTADA                                            -->
                     <!-- ================================================== -->
 
-                    <article class="videoYoutube">
+                    <div class="mmPortada">
 
-                        <div class="miniaturaVideo">
+                        <p class="etiqueta">ARCHIVO DEL PROYECTO</p>
 
-                            <img src="https://img.youtube.com/vi/1TxWYpWXe4I/hqdefault.jpg"
-                                 alt="Tutorial para armar un dron paso a paso">
+                        <h2 class="mmTitulo">
+                            <span>MULTI</span>
+                            <span>MEDIA</span>
+                        </h2>
 
-                            <div class="iconoPlay">
-                                ▶
+                        <p class="mmLema">
+                            Los videos que nos enseñaron y las fotos de
+                            cómo construimos UNI AeroNet.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Cinta de texto en movimiento -->
+                    <div class="mmCinta" aria-hidden="true">
+                        <div class="mmCintaPista">
+                            <div class="mmGrupo">
+                                <span>SISTEMAS AÉREOS</span><span>/</span>
+                                <span>COMUNICACIÓN Y REDES</span><span>/</span>
+                                <span>DESARROLLO WEB</span><span>/</span>
                             </div>
-
-                        </div>
-
-
-                        <div class="videoContenido">
-
-                            <span class="categoriaVideo">
-                                🚁 SISTEMAS AÉREOS
-                            </span>
-
-                            <h3>
-                                Construcción de un dron paso a paso
-                            </h3>
-
-                            <p>
-                                Tutorial de referencia sobre el montaje
-                                y construcción de un vehículo aéreo no tripulado.
-                            </p>
-
-                            <a href="https://youtu.be/1TxWYpWXe4I"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="botonVideo">
-
-                                ▶ Ver en YouTube
-
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- ================================================== -->
-                    <!-- VIDEO 2: LoRa                                     -->
-                    <!-- ================================================== -->
-
-                    <article class="videoYoutube">
-
-                        <div class="miniaturaVideo">
-
-                            <img src="https://img.youtube.com/vi/mCVtn_sfCrs/hqdefault.jpg"
-                                 alt="Transmisor y receptor LoRa">
-
-                            <div class="iconoPlay">
-                                ▶
+                            <div class="mmGrupo">
+                                <span>SISTEMAS AÉREOS</span><span>/</span>
+                                <span>COMUNICACIÓN Y REDES</span><span>/</span>
+                                <span>DESARROLLO WEB</span><span>/</span>
                             </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Índice que filtra los videos -->
+                    <div class="mmIndice">
+                        <button class="mmIndiceItem activo" data-filtro="todo"><span class="mmNum">00</span>Todo</button>
+                        <button class="mmIndiceItem" data-filtro="aereos"><span class="mmNum">01</span>Sistemas aéreos</button>
+                        <button class="mmIndiceItem" data-filtro="redes"><span class="mmNum">02</span>Comunicación y redes</button>
+                        <button class="mmIndiceItem" data-filtro="web"><span class="mmNum">03</span>Desarrollo web</button>
+                    </div>
+
+
+
+                    <!-- ================================================== -->
+                    <!-- VIDEOS RECOMENDADOS                                -->
+                    <!-- ================================================== -->
+
+                    <div class="multimediaBloque">
+
+                        <p class="etiqueta">
+                            VIDEOS RECOMENDADOS
+                        </p>
+
+                        <h3 class="tituloMultimedia">
+                            Guías y material de referencia
+                        </h3>
+
+
+                        <div class="videosGrid">
+
+
+                            <!-- ================================================== -->
+                            <!-- VIDEO 1: DRON                                     -->
+                            <!-- ================================================== -->
+
+                            <article class="videoYoutube">
+
+                                <div class="miniaturaVideo">
+
+                                    <img src="https://img.youtube.com/vi/1TxWYpWXe4I/hqdefault.jpg"
+                                         alt="Tutorial para armar un dron paso a paso">
+
+                                    <div class="iconoPlay">
+                                        ▶
+                                    </div>
+
+                                </div>
+
+
+                                <div class="videoContenido">
+
+                                    <span class="categoriaVideo">
+                                        🚁 SISTEMAS AÉREOS
+                                    </span>
+
+                                    <h3>
+                                        Construcción de un dron paso a paso
+                                    </h3>
+
+                                    <p>
+                                        Tutorial de referencia sobre el montaje
+                                        y construcción de un vehículo aéreo no tripulado.
+                                    </p>
+
+                                    <a href="https://youtu.be/1TxWYpWXe4I"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="botonVideo">
+
+                                        ▶ Ver en YouTube
+
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- ================================================== -->
+                            <!-- VIDEO 2: LoRa                                     -->
+                            <!-- ================================================== -->
+
+                            <article class="videoYoutube">
+
+                                <div class="miniaturaVideo">
+
+                                    <img src="https://img.youtube.com/vi/mCVtn_sfCrs/hqdefault.jpg"
+                                         alt="Transmisor y receptor LoRa">
+
+                                    <div class="iconoPlay">
+                                        ▶
+                                    </div>
+
+                                </div>
+
+
+                                <div class="videoContenido">
+
+                                    <span class="categoriaVideo">
+                                        📡 COMUNICACIÓN Y REDES
+                                    </span>
+
+                                    <h3>
+                                        Transmisor y receptor LoRa
+                                    </h3>
+
+                                    <p>
+                                        Tutorial sobre la construcción de un sistema
+                                        transmisor y receptor utilizando módulos LoRa,
+                                        aplicable a drones y otros proyectos electrónicos.
+                                    </p>
+
+                                    <a href="https://youtu.be/mCVtn_sfCrs"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="botonVideo">
+
+                                        ▶ Ver en YouTube
+
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- ================================================== -->
+                            <!-- VIDEO 3: DESARROLLO WEB                            -->
+                            <!-- ================================================== -->
+
+                            <article class="videoYoutube">
+
+                                <div class="miniaturaVideo">
+
+                                    <img src="https://img.youtube.com/vi/zwlcgpKV68Q/hqdefault.jpg"
+                                         alt="Tutorial para crear una página web">
+
+                                    <div class="iconoPlay">
+                                        ▶
+                                    </div>
+
+                                </div>
+
+
+                                <div class="videoContenido">
+
+                                    <span class="categoriaVideo">
+                                        💻 DESARROLLO WEB
+                                    </span>
+
+                                    <h3>
+                                        Desarrollo de una página web
+                                    </h3>
+
+                                    <p>
+                                        Tutorial de referencia para la creación
+                                        y estructuración de una página web mediante
+                                        HTML y Visual Studio.
+                                    </p>
+
+                                    <a href="https://youtu.be/zwlcgpKV68Q"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="botonVideo">
+
+                                        ▶ Ver en YouTube
+
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- ================================================== -->
+                            <!-- VIDEO 4: YOUTUBE + HTML                            -->
+                            <!-- ================================================== -->
+
+                            <article class="videoYoutube">
+
+                                <div class="miniaturaVideo">
+
+                                    <img src="https://img.youtube.com/vi/uzB_bVqXgLU/hqdefault.jpg"
+                                         alt="Cómo insertar un video de YouTube en HTML">
+
+                                    <div class="iconoPlay">
+                                        ▶
+                                    </div>
+
+                                </div>
+
+
+                                <div class="videoContenido">
+
+                                    <span class="categoriaVideo">
+                                        💻 DESARROLLO WEB
+                                    </span>
+
+                                    <h3>
+                                        Integración de videos en HTML
+                                    </h3>
+
+                                    <p>
+                                        Tutorial sobre cómo incorporar contenido
+                                        audiovisual de YouTube dentro de una página web.
+                                    </p>
+
+                                    <a href="https://youtu.be/uzB_bVqXgLU"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="botonVideo">
+
+                                        ▶ Ver en YouTube
+
+                                    </a>
+
+                                </div>
+
+                            </article>
+
 
                         </div>
 
+                    </div>
 
-                        <div class="videoContenido">
 
-                            <span class="categoriaVideo">
-                                📡 COMUNICACIÓN Y REDES
-                            </span>
 
-                            <h3>
-                                Transmisor y receptor LoRa
-                            </h3>
+                    <!-- ================================================== -->
+                    <!-- GALERÍA                                            -->
+                    <!-- ================================================== -->
 
-                            <p>
-                                Tutorial sobre la construcción de un sistema
-                                transmisor y receptor utilizando módulos LoRa,
-                                aplicable a drones y otros proyectos electrónicos.
-                            </p>
+                    <div class="multimediaBloque">
 
-                            <a href="https://youtu.be/mCVtn_sfCrs"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="botonVideo">
+                        <p class="etiqueta">
+                            GALERÍA
+                        </p>
 
-                                ▶ Ver en YouTube
+                        <h3 class="tituloMultimedia">
+                            Imágenes del proyecto
+                        </h3>
 
-                            </a>
+
+                        <div class="mosaico">
+
+                            <!-- ================================================== -->
+                            <!-- IMAGEN 4                                           -->
+                            <!-- ================================================== -->
+
+                            <figure class="foto fotoGrande">
+                                <img src="images/dron-referencia.jpg"
+                                     alt="Imagen de referencia del dron">
+                                <figcaption>
+                                    <span class="fotoId">IMG-01</span>
+                                    <span class="fotoTitulo">Nuestro dron</span>
+                                    <span class="fotoDesc">El vehículo aéreo utilizado en el proyecto.</span>
+                                </figcaption>
+                            </figure>
+
+                            <!-- ================================================== -->
+                            <!-- IMAGEN 4                                           -->
+                            <!-- ================================================== -->
+
+                            <figure class="foto">
+                                <img src="images/wasa.jpg"
+                                     alt="Registro fotográfico del proyecto">
+                                <figcaption>
+                                    <span class="fotoId">IMG-02</span>
+                                    <span class="fotoTitulo">Registro del proyecto</span>
+                                    <span class="fotoDesc">Material fotográfico de la clase.</span>
+                                </figcaption>
+                            </figure>
+
+                            <!-- ================================================== -->
+                            <!-- IMAGEN 4                                           -->
+                            <!-- ================================================== -->
+
+                            <figure class="foto">
+                                <img src="images/grupo1-1.jpg"
+                                     alt="Miembros del equipo trabajando en el código">
+                                <figcaption>
+                                    <span class="fotoId">IMG-03</span>
+                                    <span class="fotoTitulo">Equipo en acción</span>
+                                    <span class="fotoDesc">Trabajando en el código de la plataforma.</span>
+                                </figcaption>
+                            </figure>
+
+
+                            <!-- ================================================== -->
+                            <!-- IMAGEN 4                                           -->
+                            <!-- ================================================== -->
+
+                            <figure class="foto">
+                                <img src="images/grupo1-2.jpg"
+                                     alt="Otra perspectiva de los miembros del equipo">
+                                <figcaption>
+                                    <span class="fotoId">IMG-04</span>
+                                    <span class="fotoTitulo">Equipo en acción</span>
+                                    <span class="fotoDesc">Trabajando en la interfaz web.</span>
+                                </figcaption>
+                            </figure>
 
                         </div>
 
-                    </article>
+                    </div>
 
 
 
                     <!-- ================================================== -->
-                    <!-- VIDEO 3: DESARROLLO WEB                            -->
+                    <!-- RECURSOS RELACIONADOS                              -->
                     <!-- ================================================== -->
 
-                    <article class="videoYoutube">
+                    <div class="recursosRelacionados">
 
-                        <div class="miniaturaVideo">
+                        <p class="etiqueta">
+                            RECURSOS RELACIONADOS
+                        </p>
 
-                            <img src="https://img.youtube.com/vi/zwlcgpKV68Q/hqdefault.jpg"
-                                 alt="Tutorial para crear una página web">
+                        <h3>
+                            Conexión con UNI AeroNet
+                        </h3>
 
-                            <div class="iconoPlay">
-                                ▶
-                            </div>
+                        <p>
 
-                        </div>
+                            Los recursos presentados en esta sección están
+                            relacionados con las diferentes etapas que conforman
+                            UNI AeroNet. La construcción del sistema aéreo,
+                            la comunicación inalámbrica, la transmisión de datos
+                            y el desarrollo de la plataforma web forman parte de
+                            una misma arquitectura orientada al monitoreo y
+                            transmisión de información desde un sistema aéreo.
 
+                        </p>
 
-                        <div class="videoContenido">
+                        <p>
 
-                            <span class="categoriaVideo">
-                                💻 DESARROLLO WEB
-                            </span>
+                            Estos materiales funcionan como referencias técnicas
+                            y educativas para comprender algunas de las tecnologías
+                            utilizadas o relacionadas con el desarrollo del proyecto.
 
-                            <h3>
-                                Desarrollo de una página web
-                            </h3>
+                        </p>
 
-                            <p>
-                                Tutorial de referencia para la creación
-                                y estructuración de una página web mediante
-                                HTML y Visual Studio.
-                            </p>
+                    </div>
 
-                            <a href="https://youtu.be/zwlcgpKV68Q"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="botonVideo">
 
-                                ▶ Ver en YouTube
-
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- ================================================== -->
-                    <!-- VIDEO 4: YOUTUBE + HTML                            -->
-                    <!-- ================================================== -->
-
-                    <article class="videoYoutube">
-
-                        <div class="miniaturaVideo">
-
-                            <img src="https://img.youtube.com/vi/uzB_bVqXgLU/hqdefault.jpg"
-                                 alt="Cómo insertar un video de YouTube en HTML">
-
-                            <div class="iconoPlay">
-                                ▶
-                            </div>
-
-                        </div>
-
-
-                        <div class="videoContenido">
-
-                            <span class="categoriaVideo">
-                                💻 DESARROLLO WEB
-                            </span>
-
-                            <h3>
-                                Integración de videos en HTML
-                            </h3>
-
-                            <p>
-                                Tutorial sobre cómo incorporar contenido
-                                audiovisual de YouTube dentro de una página web.
-                            </p>
-
-                            <a href="https://youtu.be/uzB_bVqXgLU"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="botonVideo">
-
-                                ▶ Ver en YouTube
-
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ================================================== -->
-            <!-- GALERÍA                                            -->
-            <!-- ================================================== -->
-
-            <div class="multimediaBloque">
-
-                <p class="etiqueta">
-                    GALERÍA
-                </p>
-
-                <h3 class="tituloMultimedia">
-                    Imágenes del proyecto
-                </h3>
-
-
-                <div class="galeriaGrid">
-
-
-                    <!-- ================================================== -->
-                    <!-- IMAGEN 1                                           -->
-                    <!-- ================================================== -->
-
-                    <article class="imagenGaleria">
-
-                        <img src="images/dron-referencia.jpg"
-                             alt="Imagen de referencia del dron">
-
-                        <div class="galeriaTexto">
-
-                            <h3>
-                                Sistema aéreo
-                            </h3>
-
-                            <p>
-                                Imagen de referencia del vehículo aéreo
-                                utilizado en el proyecto.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- ================================================== -->
-                    <!-- IMAGEN 2                                           -->
-                    <!-- ================================================== -->
-
-                    <article class="imagenGaleria">
-
-                        <img src="images/wasa.jpg"
-                             alt="Imagen de referencia del wasa">
-
-                        <div class="galeriaTexto">
-
-                            <h3>
-                                foto de relleno
-                            </h3>
-
-                            <p>
-                                usada para referenciar a los
-                                fantasmones de la clase.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- ================================================== -->
-                    <!-- IMAGEN 3                                           -->
-                    <!-- ================================================== -->
-
-                    <article class="imagenGaleria">
-
-                        <img src="images/grupo1-1.jpg"
-                             alt="Imagen de miembros del equipo telecom">
-
-                        <div class="galeriaTexto">
-
-                            <h3>
-                                grupo 1 chambeando
-                            </h3>
-
-                            <p>
-                                compañeritos modificando el codigo
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- ================================================== -->
-                    <!-- IMAGEN 4                                           -->
-                    <!-- ================================================== -->
-
-                    <article class="imagenGaleria">
-
-                        <img src="images/grupo1-2.jpg"
-                             alt="otra perspectiva de los miembros">
-
-                        <div class="galeriaTexto">
-
-                            <h3>
-                                alumnos chambeadores
-                            </h3>
-
-                            <p>
-                                compañeres trabajando en la interfaz web
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ================================================== -->
-            <!-- RECURSOS RELACIONADOS                              -->
-            <!-- ================================================== -->
-
-            <div class="recursosRelacionados">
-
-                <p class="etiqueta">
-                    RECURSOS RELACIONADOS
-                </p>
-
-                <h3>
-                    Conexión con UNI AeroNet
-                </h3>
-
-                <p>
-
-                    Los recursos presentados en esta sección están
-                    relacionados con las diferentes etapas que conforman
-                    UNI AeroNet. La construcción del sistema aéreo,
-                    la comunicación inalámbrica, la transmisión de datos
-                    y el desarrollo de la plataforma web forman parte de
-                    una misma arquitectura orientada al monitoreo y
-                    transmisión de información desde un sistema aéreo.
-
-                </p>
-
-                <p>
-
-                    Estos materiales funcionan como referencias técnicas
-                    y educativas para comprender algunas de las tecnologías
-                    utilizadas o relacionadas con el desarrollo del proyecto.
-
-                </p>
-
-            </div>
-
-
-        </section>
+                </section>
 
 
         <!-- ================================================== -->

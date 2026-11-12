@@ -263,3 +263,33 @@ if (guardada) ipInput.value = guardada;
 
 actualizarVistaPrevia();
 mostrarEstado("espera");
+
+
+
+// ==================================================
+// MULTIMEDIA: FILTRO DE VIDEOS POR CATEGORÍA
+// ==================================================
+
+const botonesFiltro = document.querySelectorAll(".mmIndiceItem");
+const tarjetasVideo = document.querySelectorAll(".videoYoutube");
+
+botonesFiltro.forEach(function (boton) {
+
+    boton.addEventListener("click", function () {
+
+        const filtro = boton.dataset.filtro;
+
+        // Marcar solo el botón elegido
+        botonesFiltro.forEach(function (b) {
+            b.classList.remove("activo");
+        });
+        boton.classList.add("activo");
+
+        // Mostrar los videos de esa categoría y ocultar el resto
+        tarjetasVideo.forEach(function (tarjeta) {
+            const coincide = (filtro === "todo" ||
+                tarjeta.dataset.categoria === filtro);
+            tarjeta.classList.toggle("oculto", !coincide);
+        });
+    });
+});
